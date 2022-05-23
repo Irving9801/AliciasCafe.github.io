@@ -1,10 +1,9 @@
-import { Layout, Tabs } from "antd";
+import { Layout } from "antd";
 import React from "react";
-import logo from "../assets/img/logo.svg";
+import logo from "../assets/img/logo.png";
 import "../../src/assets/css/bootstrap.min.css";
-import About from "../pages/About";
-import { Router, Switch, Link, Route } from "react-router-dom";
-const { TabPane } = Tabs;
+import { Link } from "react-router-dom";
+import "./index.css";
 const { Content } = Layout;
 export default function () {
   return (
@@ -14,24 +13,22 @@ export default function () {
           className="collapse navbar-collapse justify-content-around"
           id="navbarSupportedContent"
         >
-          <Tabs>
+          <div className="divo">
             <Link to="/">Incio</Link>
             <Link to="/about">Acerca de</Link>
-            <Link to="/about">Carga masiva</Link>
-            {/* </TabPane>
-            <TabPane tab="Recetas" key="3"></TabPane> */}
-          </Tabs>
+            <Link to="/about">**</Link>
+          </div>
           <a
             className="navbar-brand navbar-brand-center d-flex align-items-center only-desktop"
-            href="#"
+            href="/"
           >
             <img src={logo} alt="" width={50} />
           </a>
-          <Tabs>
-            <TabPane tab="Menu" key="4" to="/"></TabPane>
-            <TabPane tab="Equipo" key="5"></TabPane>
-            <TabPane tab="Reservacion" key="6"></TabPane>
-          </Tabs>
+          <div className="divo">
+            <Link to="/">Incio</Link>
+            <Link to="/about">Acerca de</Link>
+            <Link to="/about">**</Link>
+          </div>
         </div>
       </Content>
     </nav>
