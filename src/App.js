@@ -1,11 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import Home from './pages/Home';
+import React from "react";
+import "./App.css";
+import Router from "./routes/routes";
 function App() {
   return (
-    <div className="App">
-     <Home/>
-    </div>
+    <React.StrictMode>
+      <Router />
+    </React.StrictMode>
   );
 }
 
