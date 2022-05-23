@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import 'antd/dist/antd.css';
 import { Layout, Menu } from "antd";
 import {
@@ -6,8 +6,10 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
+import FooterComponent from "../components/FooterComponent";
+import Principalpage from "../components/Principalpage";
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 export default function Home() {
   return (
@@ -35,7 +37,7 @@ export default function Home() {
           ].map((icon, index) => ({
             key: String(index + 1),
             icon: React.createElement(icon),
-            label: `nav ${index + 1}`,
+            label: `Hola ${index + 1}`,
           }))}
         />
       </Sider>
@@ -49,12 +51,10 @@ export default function Home() {
             className="site-layout-background"
             style={{ padding: 24, minHeight: 360 }}
           >
-            content
+            <Principalpage/>
           </div>
         </Content>
-        <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2018 Created by Ant UED
-        </Footer>
+       <FooterComponent/>
       </Layout>
     </Layout>
   );
