@@ -1,18 +1,12 @@
 import React from "react";
-import { Card, Layout, Row, Col, Typography, Image, Button } from "antd";
+import {  Layout } from "antd";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
 import "../assets/css/pages/stylesMenu.css";
-import styled from "styled-components";
 import hamburgesa from "../assets/img/recetas/hamburguesa.jpg";
-import {
-  imageZoomEffect,
-  TitleStyles,
-} from "../../src/assets/css/pages/ReusableStyles";
+
 import "./in.css";
 const { Content } = Layout;
-const { Meta } = Card;
-const { Title } = Typography;
 const data = [
   {
     image: hamburgesa,

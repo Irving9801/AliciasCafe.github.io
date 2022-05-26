@@ -4,8 +4,6 @@ import About from "../pages/About";
 import Home from "../pages/Home";
 import Menu from "../pages/Menu";
 import Recetas from "../pages/Recetas";
-
-import SignIn from "../components/SignIn";
 import Recipes from "../components/Recipes";
 import ContacUs from "../components/ContacUs";
 import Login from "../pages/Login";

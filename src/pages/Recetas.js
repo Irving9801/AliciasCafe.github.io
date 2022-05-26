@@ -87,7 +87,7 @@ const Recetas = () => {
 
                   <div className="description">
                     <a
-                      target="_blank"
+                      // target="_blank"
                       className="titulo-resaltado"
                     >
                       {receta.title}

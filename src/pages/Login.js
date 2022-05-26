@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import {  NavLink, Link } from "react-router-dom";
+import {  NavLink} from "react-router-dom";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
-import Footer from "../components/FooterComponent";
 import Header from "../components/Header";
 import "../assets/css/pages/login.css";
 import { Layout } from "antd";
