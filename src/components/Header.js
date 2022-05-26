@@ -16,9 +16,7 @@ export default function () {
           <div className="divo">
             <Link to="/">Incio</Link>
             <Link to="/Menu">Menu</Link>
-            <Link to="/about">**</Link>
-            <Link to="/about">Sobre Nosotros</Link>
-            <Link to="/recipes">Recetas</Link>
+            <Link to="/recetas">Recetas</Link>
           </div>
           <a
             className="navbar-brand navbar-brand-center d-flex align-items-center only-desktop"
@@ -27,9 +25,7 @@ export default function () {
             <img src={logo} alt="" width={50} />
           </a>
           <div className="divo">
-            <Link to="/recetas">Recetas</Link>
             <Link to="/about">Acerca de</Link>
-            <Link to="/about">**</Link>
             <Link to="/contactus">Contactanos</Link>
             <Link to="/Login">Sign Up / Registrate</Link>
           </div>

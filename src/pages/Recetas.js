@@ -67,31 +67,37 @@ const Recetas = () => {
               </Title>
             </div>
           </Col>
-          <Col span={18}>
-            <div>
-              {recetas.map((receta) => (
-                <div className="recipe__div">
-                  <Row
-                    style={{
-                      display: "flex",
-                      margin: "5% auto",
-                      justifyContent: "start",
-                    }}
-                  >
-                    <Col span={8}>
-                      <Image width={200} src={hamburgesa}></Image>
-                    </Col>
-                    <Col span={10}>
-                      <Title>{receta.title}</Title>
-                      <Title level={5}>{receta.title1}</Title>
-                      <Button type="primary" shape="round">
-                        Ver Receta
-                      </Button>
-                    </Col>
-                  </Row>
+          <Col span={18} style={{margin:"auto"}}>
+            {recetas.map((receta, index) => (
+              <div className="main_divvv">
+                <div className="second_div">
+                  <img
+                    class="img_class"
+                    data-width="320"
+                    data-height="320"
+                    data-webp="1"
+                    alt="Paso 1"
+                    title="Paso 1"
+                    src={hamburgesa}
+                  />
                 </div>
-              ))}
-            </div>
+
+                <div className="number">
+                  <div className="number_son">{index}</div>
+
+                  <div className="description">
+                    <a
+                      target="_blank"
+                      className="titulo-resaltado"
+                    >
+                      {receta.title}
+                    </a>
+                   {receta.title1}
+                    <Button className="btn-receta-tip">Ver receta</Button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </Col>
         </Row>
       </Content>

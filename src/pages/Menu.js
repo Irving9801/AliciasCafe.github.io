@@ -9,10 +9,32 @@ import {
   imageZoomEffect,
   TitleStyles,
 } from "../../src/assets/css/pages/ReusableStyles";
+import "./in.css";
 const { Content } = Layout;
 const { Meta } = Card;
 const { Title } = Typography;
 const data = [
+  {
+    image: hamburgesa,
+    name: "Cheesy House Burguer",
+    price: "$22.4  c/u",
+  },
+  {
+    image: hamburgesa,
+    name: "Cheesy House Burguer",
+    price: "$5.5  c/u",
+  },
+  {
+    image: hamburgesa,
+    name: "Cheesy House Burguer",
+    price: "$8  c/u",
+  },
+
+  {
+    image: hamburgesa,
+    name: "Cheesy House Burguer",
+    price: "$12.5  c/u",
+  },
   {
     image: hamburgesa,
     name: "Cheesy House Burguer",
@@ -40,22 +62,32 @@ const Menu = () => {
     <Layout className="layout__Main">
       <Header />
       <Content>
-        <div className="item">
-          <img src={hamburgesa} alt="food" />
-          <div className="item-head_desc">
-            <p className="head_desc-name">irin</p>
-            <p className="head_desc-info">
-              <small>mama</small>
-            </p>
-          </div>
-          <div className="item-foot_desc">
-            <span className="foot_desc-price">$1</span>
-            {/* <ButtonAddRemoveItem
-              quantity={handleQuantity()}
-              handleRemoveItem={() => cartRemoveItem(item)}
-              handleAddItem={() => cartAddItem(item)}
-            /> */}
-          </div>
+        <div className="c-thumb-list__grid">
+          {data.map((item) => (
+            <a className="c-thumb">
+              <span className="c-thumb__inner">
+                <span className="c-thumb__top">
+                  <span className="c-thumb__price">$19.00</span>
+                </span>
+                <span className="c-thumb__asset">
+                  <picture className="o-asset c-thumb__img">
+                    <img src={hamburgesa} alt="MDN"></img>
+                  </picture>
+                </span>
+                <span className="c-thumb__content">
+                  <h3 data-v-28396ab7="" class="c-thumb__title | t-t3">
+                    Kale césar
+                  </h3>
+                  <span className="c-thumb__price">$19.00</span>
+                  <p data-v-28396ab7="" class="c-thumb__desc | t-xs text-dark">
+                    Kale, laitue frisée, poulet, patate douce, tomate cerise,
+                    concombre, bacon, croûton sans gluten, cheddar de
+                    l’Île-aux-Grues, citron, anchoïade, vinaigrette césar.
+                  </p>
+                </span>
+              </span>
+            </a>
+          ))}
         </div>
       </Content>
       <FooterComponent />
