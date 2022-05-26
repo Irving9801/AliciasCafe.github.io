@@ -86,7 +86,7 @@ const Recetas = () => {
                   <div className="number_son">{index}</div>
 
                   <div className="description">
-                    <a
+                    <a href="facebook.com/"
                       // target="_blank"
                       className="titulo-resaltado"
                     >

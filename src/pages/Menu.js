@@ -58,7 +58,7 @@ const Menu = () => {
       <Content>
         <div className="c-thumb-list__grid">
           {data.map((item) => (
-            <a className="c-thumb">
+            <a href="facebook.com" className="c-thumb">
               <span className="c-thumb__inner">
                 <span className="c-thumb__top">
                   <span className="c-thumb__price">$19.00</span>
