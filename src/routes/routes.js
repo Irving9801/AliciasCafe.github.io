@@ -9,16 +9,17 @@ import Login from "../pages/Login";
 function Connection() {
   return (
     <>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Recipes" element={<Recipes/>}></Route>
-        <Route path="/Login" element={<Login/>}></Route>
-        <Route path="/ContactUs" element={<ContacUs/>}></Route>
-        <Route path="/SignIn" element={<SignIn/>}></Route>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Recipes" element={<Recipes />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/ContactUs" element={<ContacUs />} />
+          {/* <Route exact path="/" component={SignUp} /> */}
+          {/* <Route path="/Login/sign-in" component={<SignIn />} /> */}
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

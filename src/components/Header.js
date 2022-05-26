@@ -26,7 +26,7 @@ export default function () {
           </a>
           <div className="divo">
             <Link to="/contactus">Contactanos</Link>
-            <Link to="/login">Sign Up / Registrate</Link>
+            <Link to="/Login">Sign Up / Registrate</Link>
           </div>
         </div>
       </Content>

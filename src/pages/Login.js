@@ -1,30 +1,37 @@
-import React, { Component } from "react";
-import { HashRouter as Router, Route, NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import {  NavLink, Link } from "react-router-dom";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
-
+import Footer from "../components/FooterComponent";
+import Header from "../components/Header";
 import "../assets/css/pages/login.css";
+import { Layout } from "antd";
+const { Content } = Layout;
+const Login = () => {
+  const [count, setCount] = useState(1);
 
-class Login extends Component {
-  render() {
-    return (
-     
+  return (
+    <Layout className="layout__Main">
+      <Header />
+      <Content>
         <div className="App">
           <div className="appAside" />
           <div className="appForm">
             <div className="pageSwitcher">
               <NavLink
-                to="/sign-in"
-                activeClassName="pageSwitcherItem-active"
+                to="/Login"
+                // activeClassName="pageSwitcherItem-active"
                 className="pageSwitcherItem"
+                onClick={() => setCount(0)}
               >
                 Sign In
               </NavLink>
               <NavLink
                 exact
-                to="/"
-                activeClassName="pageSwitcherItem-active"
+                to="/Login"
+                // activeClassName="pageSwitcherItem-active"
                 className="pageSwitcherItem"
+                onClick={() => setCount(2)}
               >
                 Sign Up
               </NavLink>
@@ -32,29 +39,30 @@ class Login extends Component {
 
             <div className="formTitle">
               <NavLink
-                to="/SignIn"
-                activeClassName="formTitleLink-active"
+                to="/Login"
+                // activeClassName="formTitleLink-active"
                 className="formTitleLink"
+                onClick={() => setCount(0)}
               >
-               Sign in
-              </NavLink>{" "}
-              or{" "}
+                Sign Ins
+              </NavLink>
+              or
               <NavLink
                 exact
-                to="/"
-                activeClassName="formTitleLink-active"
+                to="/Login"
+                // activeClassName="formTitleLink-active"
                 className="formTitleLink"
+                onClick={() => setCount(2)}
               >
                 Sign Up
               </NavLink>
+              {count === 0 ? <SignIn /> : <SignUp />}
             </div>
-
-        
           </div>
         </div>
-  
-    );
-  }
-}
+      </Content>
+    </Layout>
+  );
+};
 
 export default Login;
