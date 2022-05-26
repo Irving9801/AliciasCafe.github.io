@@ -1,3 +1,18 @@
 .layout__Main{
     margin: 2%;
 }
+.recipe_Main{
+    margin: auto;
+    width: 53%;
+    display: flex;
+}
+.recipe__div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+    width: 70%;
+}
+
+/* menu css */

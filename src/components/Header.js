@@ -15,7 +15,7 @@ export default function () {
         >
           <div className="divo">
             <Link to="/">Incio</Link>
-            <Link to="/about">Acerca de</Link>
+            <Link to="/Menu">Menu</Link>
             <Link to="/about">**</Link>
           </div>
           <a
@@ -25,7 +25,7 @@ export default function () {
             <img src={logo} alt="" width={50} />
           </a>
           <div className="divo">
-            <Link to="/">Incio</Link>
+            <Link to="/recetas">Recetas</Link>
             <Link to="/about">Acerca de</Link>
             <Link to="/about">**</Link>
           </div>
