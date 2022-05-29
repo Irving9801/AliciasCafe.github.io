@@ -22,7 +22,7 @@ export default function () {
             className="navbar-brand navbar-brand-center d-flex align-items-center only-desktop"
             href="/"
           >
-            <img src={logo} alt="" width={50} />
+            <img src={logo} alt="" width={130} />
           </a>
           <div className="divo">
             <Link to="/about">Acerca de</Link>

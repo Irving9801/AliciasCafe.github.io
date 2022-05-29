@@ -2,20 +2,24 @@ import React, { useState } from "react";
 import {  NavLink} from "react-router-dom";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
-import Header from "../components/Header";
 import "../assets/css/pages/login.css";
+import { LeftOutlined } from '@ant-design/icons';
 import { Layout } from "antd";
+
 const { Content } = Layout;
 const Login = () => {
   const [count, setCount] = useState(1);
 
   return (
     <Layout className="layout__Main">
-      <Header />
+   
       <Content>
         <div className="App">
           <div className="appAside" />
           <div className="appForm">
+
+          <a href="/Home"><LeftOutlined /> Atras</a>
+          
             <div className="pageSwitcher">
               <NavLink
                 to="/Login"

@@ -56,7 +56,9 @@ const Menu = () => {
     <Layout className="layout__Main">
       <Header />
       <Content>
+      <p style={{ margin: 10, padding: 20}}>-  - Menú -  -</p>
         <div className="c-thumb-list__grid">
+          
           {data.map((item) => (
             <a href="facebook.com" className="c-thumb">
               <span className="c-thumb__inner">
@@ -73,11 +75,11 @@ const Menu = () => {
                     Kale césar
                   </h3>
                   <span className="c-thumb__price">$19.00</span>
-                  <p data-v-28396ab7="" class="c-thumb__desc | t-xs text-dark">
+                  <br></br>
                     Kale, laitue frisée, poulet, patate douce, tomate cerise,
                     concombre, bacon, croûton sans gluten, cheddar de
                     l’Île-aux-Grues, citron, anchoïade, vinaigrette césar.
-                  </p>
+                  
                 </span>
               </span>
             </a>
