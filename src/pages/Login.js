@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  NavLink} from "react-router-dom";
+import {  NavLink, Link } from "react-router-dom";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
 import "../assets/css/pages/login.css";
@@ -18,7 +18,7 @@ const Login = () => {
           <div className="appAside" />
           <div className="appForm">
 
-          <a href="/Home"><LeftOutlined /> Atras</a>
+          <Link to="/"><LeftOutlined /> Atras</Link>
           
             <div className="pageSwitcher">
               <NavLink
@@ -47,7 +47,7 @@ const Login = () => {
                 className="formTitleLink"
                 onClick={() => setCount(0)}
               >
-                Sign Ins
+                Sign In
               </NavLink>
               or
               <NavLink
