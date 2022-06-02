@@ -8,7 +8,9 @@ function About() {
     return (
         <Layout className="layout__Main">
         <Header />
-        <Content>asdasdasdasdad</Content>
+        <Content>
+          HOLA
+        </Content>
         <Footer />
       </Layout>
     );

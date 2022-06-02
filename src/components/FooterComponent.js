@@ -52,7 +52,7 @@ export default function App() {
           </Col>
           <Col className="gutter-row" span={8}>
             <div>
-              <h4>Horario</h4>
+              <h4 style={{color: "white"}}>Horario</h4>
 
               <Row>
                 <Col span={8}>Lunes</Col>
@@ -88,7 +88,7 @@ export default function App() {
           </Col>
           <Col className="gutter-row" span={8}>
             <div>
-              <h4>Boletín Informativo</h4>
+              <h4 style={{color: "white"}}>Boletín Informativo</h4>
              Lorem sjdfhnadnlvllak svlskd vakl ñsv askjd csk cskl nc
               <Input style={{ margin: 10 }} placeholder="Correo" />
               <Button type="primary" style={{ margin: 10 }} block danger>

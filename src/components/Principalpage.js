@@ -71,7 +71,7 @@ const Principalpage = () =>{
             </Carousel>
     <Radio.Group/>
         </div>
-        <a href="#"><Button style={{ margin: 20, }} type="danger"> Explorar Menú</Button></a>
+     <a href="#"><Button style={{ margin: 20,}} type="danger"> Explorar Menú</Button></a>
         <a href="#"><Button denger type="link" shape="round" icon={<PlayCircleOutlined />}>Play Video</Button></a>
        
         <div>

@@ -1,5 +1,5 @@
 import React from "react";
-import {  Layout } from "antd";
+import {  Layout, Row, Col } from "antd";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
 import "../assets/css/pages/stylesMenu.css";
@@ -13,22 +13,9 @@ const data = [
     name: "Cheesy House Burguer",
     price: "$22.4  c/u",
   },
-  {
-    image: hamburgesa,
-    name: "Cheesy House Burguer",
-    price: "$5.5  c/u",
-  },
-  {
-    image: hamburgesa,
-    name: "Cheesy House Burguer",
-    price: "$8  c/u",
-  },
 
-  {
-    image: hamburgesa,
-    name: "Cheesy House Burguer",
-    price: "$12.5  c/u",
-  },
+];
+const data1 = [
   {
     image: hamburgesa,
     name: "Cheesy House Burguer",
@@ -56,38 +43,184 @@ const Menu = () => {
     <Layout className="layout__Main">
       <Header />
       <Content>
-      <p style={{ margin: 10, padding: 20}}>-  - Menú -  -</p>
-        <div className="c-thumb-list__grid">
-          
-          {data.map((item) => (
-            <a href="facebook.com" className="c-thumb">
-              <span className="c-thumb__inner">
-                <span className="c-thumb__top">
-                  <span className="c-thumb__price">$19.00</span>
-                </span>
-                <span className="c-thumb__asset">
-                  <picture className="o-asset c-thumb__img">
-                    <img src={hamburgesa} alt="MDN"></img>
-                  </picture>
-                </span>
-                <span className="c-thumb__content">
-                  <h3 data-v-28396ab7="" class="c-thumb__title | t-t3">
-                    Kale césar
-                  </h3>
-                  <span className="c-thumb__price">$19.00</span>
+        <hr />
+      <p style={{ margin: 5, padding: 15}}>-  - Menú -  -</p>
+    <Row>
+    <Col xs={{ span: 5, offset: 1, }} lg={{span: 6, offset: 2,}}>
+    <h1 style={{display: 'flex',  justifyContent:'left', color: "brown"}}>Entrada</h1>
+ 
+    <Col className="gutter-row" span={8}>
+            <div>
+              <Row>
+                <Col span={8}>Lunessssssssssssssss</Col>
+                <Col span={8} offset={8}>
                   <br></br>
-                    Kale, laitue frisée, poulet, patate douce, tomate cerise,
-                    concombre, bacon, croûton sans gluten, cheddar de
-                    l’Île-aux-Grues, citron, anchoïade, vinaigrette césar.
-                  
-                </span>
-              </span>
-            </a>
-          ))}
-        </div>
-      </Content>
-      <FooterComponent />
-    </Layout>
+                  9:00 
+                </Col>
+                <Col span={8}>Martes</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00
+                </Col>
+                <Col span={8}>Miercoles</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00 
+                </Col>
+                <Col span={8}>Jueves</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00 
+                </Col>
+                <Col span={8}>Viernes</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00
+                </Col>
+                <Col span={8}>Sabado</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00 
+                </Col>
+              </Row>
+            </div>
+          </Col>        
+        
+
+    </Col>
+    <Col xs={{ span: 11,  offset: 1,}} lg={{ span: 6, offset: 2,  }} >
+    <h1 style={{display: 'flex',  justifyContent:'left',color: "brown"}}>Postre</h1>
+
+    <Col className="gutter-row" span={8}>
+            <div>
+              <Row>
+                <Col span={8}>Lunessssssssssssssss</Col>
+                <Col span={8} offset={8}>
+                  <br></br>
+                  9:00 
+                </Col>
+                <Col span={8}>Martes</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00
+                </Col>
+                <Col span={8}>Miercoles</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00 
+                </Col>
+                <Col span={8}>Jueves</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00 
+                </Col>
+                <Col span={8}>Viernes</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00
+                </Col>
+                <Col span={8}>Sabado</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00 
+                </Col>
+              </Row>
+            </div>
+          </Col>   
+
+    </Col>
+    <Col xs={{  span: 5, offset: 1,  }}  lg={{  span: 6, offset: 2,}} >
+    <h1 style={{display: 'flex',  justifyContent:'Left',color: "brown"}}>Bebidas</h1>
+    <Col className="gutter-row" span={8}>
+            <div>
+              <Row>
+                <Col span={8}>Lunessssssssssssssss</Col>
+                <Col span={8} offset={8}>
+                  <br></br>
+                  9:00 
+                </Col>
+                <Col span={8}>Martes</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00
+                </Col>
+                <Col span={8}>Miercoles</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00 
+                </Col>
+                <Col span={8}>Jueves</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00 
+                </Col>
+                <Col span={8}>Viernes</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00
+                </Col>
+                <Col span={8}>Sabado</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00 
+                </Col>
+              </Row>
+            </div>
+          </Col>   
+
+
+    </Col>
+    
+  </Row>
+  <br></br>
+  <hr />
+  <Row>
+      <Col span={24}>
+      <h1 style={{display: 'flex',  justifyContent:'center',color: "brown"}}>Plato fuerte</h1>
+
+      <Col className="gutter-row" span={8}>
+            <div>
+              <Row >
+                <Col span={8}>Lunessssssssssssssss</Col>
+                <Col span={8} offset={8}>
+                  <br></br>
+                  9:00 
+                </Col>
+                <Col span={8}>Martes</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00
+                </Col>
+                <Col span={8}>Miercoles</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00 
+                </Col>
+                <Col span={8}>Jueves</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00 
+                </Col>
+                <Col span={8}>Viernes</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00
+                </Col>
+                <Col span={8}>Sabado</Col>
+                <Col span={8} offset={8}>
+                <br></br>
+                  9:00 
+                </Col>
+              </Row>
+            </div>
+          </Col>   
+      </Col>
+    </Row>
+  </Content>
+  <br></br>
+  <FooterComponent />
+  </Layout>
+   
   );
 };
 export default Menu;
