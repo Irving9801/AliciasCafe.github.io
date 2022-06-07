@@ -1,10 +1,14 @@
 import React from "react";
+import { Provider } from "react-redux";
 import "./App.css";
+import { store } from "./config/configStore";
 import Router from "./routes/routes";
 function App() {
   return (
     <React.StrictMode>
-      <Router />
+      <Provider store={store}>
+        <Router />
+      </Provider>
     </React.StrictMode>
   );
 }

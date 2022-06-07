@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {  Layout } from "antd";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
@@ -6,6 +6,8 @@ import "../assets/css/pages/stylesMenu.css";
 import hamburgesa from "../assets/img/recetas/hamburguesa.jpg";
 
 import "./in.css";
+import { listMenu } from "../redux/action.js/menu";
+import { useDispatch } from "react-redux";
 const { Content } = Layout;
 const data = [
   {
@@ -52,6 +54,10 @@ const data = [
   },
 ];
 const Menu = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(listMenu());
+  }, [dispatch]);
   return (
     <Layout className="layout__Main">
       <Header />
