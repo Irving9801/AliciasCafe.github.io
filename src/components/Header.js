@@ -25,9 +25,8 @@ export default function () {
             <img src={logo} alt="" width={130} />
           </a>
           <div className="divo">
-            <Link to="/about">Acerca de</Link>
-            <Link to="/contactus">Contactanos</Link>
-            <Link to="/Login">Sign Up / Registrate</Link>
+            <Link to="/about">About</Link>
+            <Link to="/Login">Sign Up / Sign In</Link>
           </div>
         </div>
       </Content>

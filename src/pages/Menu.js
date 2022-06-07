@@ -180,38 +180,12 @@ const Menu = () => {
 
       <Col className="gutter-row" span={8}>
             <div>
-              <Row >
-                <Col span={8}>Lunessssssssssssssss</Col>
-                <Col span={8} offset={8}>
-                  <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Martes</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00
-                </Col>
-                <Col span={8}>Miercoles</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Jueves</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Viernes</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00
-                </Col>
-                <Col span={8}>Sabado</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-              </Row>
+          
+    <Row>
+      <Col span={12}>col-12</Col>
+      <Col span={12}>col-12</Col>
+    </Row>
+   
             </div>
           </Col>   
       </Col>

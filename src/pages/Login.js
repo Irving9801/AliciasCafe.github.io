@@ -13,7 +13,7 @@ const Login = () => {
   return (
     <Layout className="layout__Main">
    
-      <Content>
+      <Content id="login">
         <div className="App">
           <div className="appAside" />
           <div className="appForm">

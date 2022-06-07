@@ -3,7 +3,12 @@
     display: flex;
     color: white;
   }
-  
+
+#login{
+    font-family: 'Dosis', sans-serif;
+    font-size: 15px;
+}
+
   .appAside {
     width: 65%;
     background-color: #f2e3c5;

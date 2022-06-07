@@ -28,8 +28,9 @@ const Principalpage = () =>{
 
     return(
       <section style={{margin:10}}>
-        <div className="paginaprincipal" >
-       <p style={{ margin: 20, padding: 20}}>¡Amamos la comida deliciosa!</p>
+        <div >
+          <hr></hr>
+       <p id="paginaprincipal" style={{ margin: 20, padding: 20}}>¡Amamos la comida deliciosa!</p>
         <br>
         </br>
         <div >
