@@ -1,8 +1,10 @@
-h1{
-    font-size: 50px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: left;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #F34573;
+p{
+    font-size: 70px;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+}
+
+body{
+    font-family: 'Dosis', sans-serif;
+    font-size: 18px;
 }

@@ -77,14 +77,13 @@ class SignIn extends Component {
               Create an account
             </Link>
           </div>
-
           <div className="socialMediaButtons">
             <div className="facebookButton">
-              <FacebookLoginButton onClick={() => alert("Hello")} />
+              <FacebookLoginButton onClick={() => alert("Hello")} align="center"/>
             </div>
 
             <div className="instagramButton">
-              <InstagramLoginButton onClick={() => alert("Hello")} />
+              <InstagramLoginButton onClick={() => alert("Hello")} align="center"/>
             </div>
           </div>
         </form>
