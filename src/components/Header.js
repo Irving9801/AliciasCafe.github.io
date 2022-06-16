@@ -49,7 +49,7 @@ export default function Header() {
             <Link to="/Menu">Menu</Link>
             <Link to="/recetas">Recetas</Link>
             <Link to="/about">Acerca de</Link>
-            <Link to="/contactus">Contactanos</Link>
+            <Link to="/tienda">Contactanos</Link>
             <Link to="/Login">Sign Up / Registrate</Link>
           </nav>
         </CSSTransition>
@@ -64,7 +64,7 @@ export default function Header() {
             id="navbarSupportedContent"
           >
             <div className="divo">
-              <Link to="/">Incio</Link>
+              <Link to="/">Inicio</Link>
               <Link to="/Menu">Menu</Link>
               <Link to="/recetas">Recetas</Link>
             </div>
@@ -72,11 +72,11 @@ export default function Header() {
               className="navbar-brand navbar-brand-center d-flex align-items-center only-desktop"
               href="/"
             >
-              <img src={logo} alt="" width={50} />
+              <img src={logo} alt="" width={50} height={50} />
             </a>
             <div className="divo">
               <Link to="/about">Acerca de</Link>
-              <Link to="/contactus">Contactanos</Link>
+              <Link to="/tienda">Store</Link>
               <Link to="/Login">Sign Up / Registrate</Link>
             </div>
           </div>

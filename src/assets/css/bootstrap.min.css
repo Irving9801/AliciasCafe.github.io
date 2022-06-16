@@ -190,10 +190,6 @@ pre {
 figure {
   margin: 0 0 1rem;
 }
-img {
-  vertical-align: middle;
-  border-style: none;
-}
 svg {
   overflow: hidden;
   vertical-align: middle;
@@ -8226,10 +8222,6 @@ a.text-dark:hover {
   }
   thead {
     display: table-header-group;
-  }
-  img,
-  tr {
-    page-break-inside: avoid;
   }
   h2,
   h3,

@@ -4,9 +4,15 @@ import About from "../pages/About";
 import Home from "../pages/Home";
 import Menu from "../pages/Menu";
 import Recetas from "../pages/Recetas";
-import ContacUs from "../components/ContacUs";
 import Login from "../pages/Login";
-import Admin from "../../src/admin/App";
+import Profile from "../admin/pages/Profile";
+import Homes from "../admin/pages/Home";
+import Tables from "../admin/pages/Tables";
+import Billing from "../admin/pages/Billing";
+import Rtl from "../admin/pages/Rtl";
+import Index from "../admin/app";
+import Ecommerce from "../pages/ecommerce";
+import Procedure from "../pages/procedure";
 function Connection() {
   return (
     <>
@@ -18,8 +24,16 @@ function Connection() {
           <Route path="/Menu" element={<Menu />} />
           <Route path="*" element={<h1>404</h1>}></Route>
           <Route path="/Login" element={<Login />} />
-          <Route path="/ContactUs" element={<ContacUs />} />
-          <Route path="/Admin" element={<Admin />} />
+          <Route path="/tienda" element={<Ecommerce />} />
+          <Route path="/Admin" element={<Index />} />
+          <Route path="/procedure" element={<Procedure />} />
+          {/* <Main> */}
+          <Route path="/dashboard" element={<Homes />} />
+          <Route path="/tables" element={<Tables />} />
+          <Route path="/billing" element={<Billing />} />
+          <Route path="/rtl" element={<Rtl />} />
+          <Route path="/profile" element={<Profile />} />
+          {/* </Main> */}
         </Routes>
       </BrowserRouter>
     </>

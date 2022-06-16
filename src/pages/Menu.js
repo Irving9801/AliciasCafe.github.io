@@ -1,317 +1,52 @@
 import React, { useEffect } from "react";
-import {  Layout, Row, Col } from "antd";
+import { Layout, Row, Col } from "antd";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
 import "../assets/css/pages/stylesMenu.css";
 import hamburgesa from "../assets/img/recetas/hamburguesa.jpg";
 
 import "./in.css";
-// import { listMenu } from "../redux/action.js/menu";
-import { useDispatch } from "react-redux";
+import { listMenu } from "../redux/action/productosActions";
+import { useDispatch, useSelector } from "react-redux";
 const { Content } = Layout;
-const data = [
-  {
-    image: hamburgesa,
-    name: "Cheesy House Burguer",
-    price: "$22.4  c/u",
-  },
-
-];
-const data1 = [
-  {
-    image: hamburgesa,
-    name: "Cheesy House Burguer",
-    price: "$22.4  c/u",
-  },
-  {
-    image: hamburgesa,
-    name: "Cheesy House Burguer",
-    price: "$5.5  c/u",
-  },
-  {
-    image: hamburgesa,
-    name: "Cheesy House Burguer",
-    price: "$8  c/u",
-  },
-
-  {
-    image: hamburgesa,
-    name: "Cheesy House Burguer",
-    price: "$12.5  c/u",
-  },
-];
 const Menu = () => {
   const dispatch = useDispatch();
+  const loading = useSelector((state) => state.productos);
+  const listarMenu = useSelector((state) => state.productos.listMenu.products);
   useEffect(() => {
-    // dispatch(listMenu());
+    dispatch(listMenu());
   }, [dispatch]);
   return (
     <Layout className="layout__Main">
       <Header />
       <Content>
-        <hr />
-      <p style={{ margin: 5, padding: 15}}>-  - Menú -  -</p>
-    <Row>
-    <Col xs={{ span: 5, offset: 1, }} lg={{span: 6, offset: 2,}}>
-    <h1 style={{display: 'flex',  justifyContent:'left', color: "brown"}}>Entrada</h1>
- 
-    <Col className="gutter-row" span={8}>
-            <div>
-              <Row>
-                <Col span={8}>Lunessssssssssssssss</Col>
-                <Col span={8} offset={8}>
-                  <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Martes</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00
-                </Col>
-                <Col span={8}>Miercoles</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Jueves</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Viernes</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00
-                </Col>
-                <Col span={8}>Sabado</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-              </Row>
+        <div class="wrapper">
+          <div class="title">
+            <h4>Nuestro menu</h4>
+          </div>
+          {listarMenu !== undefined ? (
+            <div class="menu">
+              {listarMenu.map((item) => (
+                <div class="single-menu">
+                  <img src={hamburgesa} alt="" />
+                  <div class="menu-content">
+                    <h4>
+                    {item.name} <span>${item.price}</span>
+                    </h4>
+                    <p className="description_text">
+                    {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-          </Col>        
-        
-
-    </Col>
-    <Col xs={{ span: 11,  offset: 1,}} lg={{ span: 6, offset: 2,  }} >
-    <h1 style={{display: 'flex',  justifyContent:'left',color: "brown"}}>Desayunos</h1>
-
-    <Col className="gutter-row" span={8}>
-            <div>
-              <Row>
-                <Col span={8}>Lunessssssssssssssss</Col>
-                <Col span={8} offset={8}>
-                  <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Martes</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00
-                </Col>
-                <Col span={8}>Miercoles</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Jueves</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Viernes</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00
-                </Col>
-                <Col span={8}>Sabado</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-              </Row>
-            </div>
-          </Col>   
-
-    </Col>
-    <Col xs={{  span: 5, offset: 1,  }}  lg={{  span: 6, offset: 2,}} >
-    <h1 style={{display: 'flex',  justifyContent:'Left',color: "brown"}}>Almuerzo</h1>
-    <Col className="gutter-row" span={8}>
-            <div>
-              <Row>
-                <Col span={8}>Lunessssssssssssssss</Col>
-                <Col span={8} offset={8}>
-                  <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Martes</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00
-                </Col>
-                <Col span={8}>Miercoles</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Jueves</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Viernes</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00
-                </Col>
-                <Col span={8}>Sabado</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-              </Row>
-            </div>
-          </Col>   
-
-
-    </Col>
-    
-  </Row>
-  <br></br>
-  <hr />
-  <Row>
-    <Col xs={{ span: 5, offset: 1, }} lg={{span: 6, offset: 2,}}>
-    <h1 style={{display: 'flex',  justifyContent:'left', color: "brown"}}>Bebidas</h1>
- 
-    <Col className="gutter-row" span={8}>
-            <div>
-              <Row>
-                <Col span={8}>Lunessssssssssssssss</Col>
-                <Col span={8} offset={8}>
-                  <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Martes</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00
-                </Col>
-                <Col span={8}>Miercoles</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Jueves</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Viernes</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00
-                </Col>
-                <Col span={8}>Sabado</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-              </Row>
-            </div>
-          </Col>        
-        
-
-    </Col>
-    <Col xs={{ span: 11,  offset: 1,}} lg={{ span: 6, offset: 2,  }} >
-    <h1 style={{display: 'flex',  justifyContent:'left',color: "brown"}}>Postres</h1>
-
-    <Col className="gutter-row" span={8}>
-            <div>
-              <Row>
-                <Col span={8}>Lunessssssssssssssss</Col>
-                <Col span={8} offset={8}>
-                  <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Martes</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00
-                </Col>
-                <Col span={8}>Miercoles</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Jueves</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Viernes</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00
-                </Col>
-                <Col span={8}>Sabado</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-              </Row>
-            </div>
-          </Col>   
-
-    </Col>
-    <Col xs={{  span: 5, offset: 1,  }}  lg={{  span: 6, offset: 2,}} >
-    <h1 style={{display: 'flex',  justifyContent:'Left',color: "brown"}}>Frappe</h1>
-    <Col className="gutter-row" span={8}>
-            <div>
-              <Row>
-                <Col span={8}>Lunessssssssssssssss</Col>
-                <Col span={8} offset={8}>
-                  <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Martes</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00
-                </Col>
-                <Col span={8}>Miercoles</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Jueves</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-                <Col span={8}>Viernes</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00
-                </Col>
-                <Col span={8}>Sabado</Col>
-                <Col span={8} offset={8}>
-                <br></br>
-                  9:00 
-                </Col>
-              </Row>
-            </div>
-          </Col>   
-
-
-    </Col>
-    
-  </Row>
-  </Content>
-  <br></br>
-  <FooterComponent />
-  </Layout>
-   
+          ) : (
+            <div>Cargando...</div>
+          )}
+        </div>
+      </Content>
+      <FooterComponent />
+    </Layout>
   );
 };
 export default Menu;

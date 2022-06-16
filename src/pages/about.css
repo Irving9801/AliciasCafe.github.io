@@ -1,39 +1,79 @@
-.container {
-    position: relative;
-    
-  }
-  
-  .image {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 20%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #008CBA;
-  }
-  
-  .container:hover .overlay {
-    opacity: 1;
-  }
-  
-  .text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
+/*---------------------------------------
+  SITE HEADER              
+-----------------------------------------*/
+.site-header {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  text-align: center;
+  position: relative;
+}
+
+.site-header .container {
+  position: relative;
+  z-index: 2;
+}
+
+.site-news-detail-header {
+  background: transparent;
+  text-align: left;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.site-about-header {
+  background-image: url('./images/head-cafe.jpg');
+}
+
+.site-menu-header {
+  background-image: url('https://t4.ftcdn.net/jpg/04/72/26/31/360_F_472263145_qIPkhZolVX1zIpF4e8SGvIJZ1ZsU4J7j.jpg');
+}
+
+.site-news-header {
+  background-image: url('https://t4.ftcdn.net/jpg/04/72/26/31/360_F_472263145_qIPkhZolVX1zIpF4e8SGvIJZ1ZsU4J7j.jpg');
+}
+
+.site-contact-header {
+  background-image: url('https://t4.ftcdn.net/jpg/04/72/26/31/360_F_472263145_qIPkhZolVX1zIpF4e8SGvIJZ1ZsU4J7j.jpg');
+}
+
+.overlay {
+  background: linear-gradient(to top, var(--dark-color), transparent 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.menu,
+.about,
+.news,
+.related-news,
+.newsletter,
+.comments {
+  background: var(--section-bg-color);
+}
+
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-.5 * var(--bs-gutter-x));
+  margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.section-padding {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+.mx-auto h1{
+  font-size: 76px;
+  --bs-text-opacity: 1;
+  color: rgba(255,255,255,1)!important;
+  font-weight: 700;
+}

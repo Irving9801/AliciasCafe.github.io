@@ -1,68 +1,221 @@
 import React, { useState } from "react";
-import {  NavLink, Link } from "react-router-dom";
-import SignIn from "../components/SignIn";
-import SignUp from "../components/SignUp";
 import "../assets/css/pages/login.css";
-import { LeftOutlined } from '@ant-design/icons';
-import { Layout } from "antd";
+import { Layout, Button, Input, Form } from "antd";
+import { login, register } from "../redux/action/userActions";
+import { useDispatch } from "react-redux";
 
 const { Content } = Layout;
 const Login = () => {
-  const [count, setCount] = useState(1);
+  const [visible, setVisible] = useState(false);
+  const dispatch = useDispatch();
+  const onFinish = (values) => {
+    dispatch(login(values.username, values.password));
+  };
 
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
+  const onFinishRegister = (values) => {
+    dispatch(register(values.FullName, values.username, values.password));
+  };
+  const screenSup = () => {
+    setVisible(true);
+  };
+  const handleClick = () => {
+    setVisible(false);
+  };
   return (
     <Layout className="layout__Main">
-   
       <Content id="login">
-        <div className="App">
-          <div className="appAside" />
-          <div className="appForm">
+        <section className="ftco-section">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-md-12 col-lg-10">
+                <div className="wrap d-md-flex">
+                  <div className="img"></div>
+                  <div className="login-wrap p-4 p-md-5">
+                    {visible === false ? (
+                      <>
+                        <div className="d-flex">
+                          <div className="w-100">
+                            <h3 className="mb-4">Iniciar sesión</h3>
+                          </div>
+                          <div className="w-100">
+                            <p className="social-media d-flex justify-content-end">
+                              <a
+                                href="#"
+                                className="social-icon d-flex align-items-center justify-content-center"
+                              >
+                                <span className="fa fa-facebook"></span>
+                              </a>
+                              <a
+                                href="#"
+                                className="social-icon d-flex align-items-center justify-content-center"
+                              >
+                                <span className="fa fa-twitter"></span>
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                        <Form
+                          name="basic"
+                          initialValues={{
+                            remember: true,
+                          }}
+                          onFinish={onFinish}
+                          onFinishFailed={onFinishFailed}
+                          autoComplete="off"
+                          class="signin-form"
+                        >
+                          <div className="form-group mb-3">
+                            <Form.Item
+                              label="Username"
+                              name="username"
+                              className="label"
+                              style={{ display: "block" }}
+                              rules={[
+                                {
+                                  required: true,
+                                  message: "Please input your username!",
+                                },
+                              ]}
+                            >
+                              <Input className="form-control" />
+                            </Form.Item>
+                          </div>
+                          <div className="form-group mb-3">
+                            <Form.Item
+                              label="Password"
+                              name="password"
+                              className="label"
+                              style={{ display: "block" }}
+                              rules={[
+                                {
+                                  required: true,
+                                  message: "Please input your password!",
+                                },
+                              ]}
+                            >
+                              <Input.Password className="form-control" />
+                            </Form.Item>
+                          </div>
+                          <Form.Item>
+                            <div className="form-group">
+                              <Button
+                                htmlType="submit"
+                                className="form-control btn btn-primary rounded submit px-3"
+                              >
+                                Iniciar sesión
+                              </Button>
+                            </div>
+                          </Form.Item>
 
-          <Link to="/"><LeftOutlined /> Atras</Link>
-          
-            <div className="pageSwitcher">
-              <NavLink
-                to="/Login"
-                // activeClassName="pageSwitcherItem-active"
-                className="pageSwitcherItem"
-                onClick={() => setCount(0)}
-              >
-                Sign In
-              </NavLink>
-              <NavLink
-                exact
-                to="/Login"
-                // activeClassName="pageSwitcherItem-active"
-                className="pageSwitcherItem"
-                onClick={() => setCount(2)}
-              >
-                Sign Up
-              </NavLink>
-            </div>
-
-            <div className="formTitle">
-              <NavLink
-                to="/Login"
-                // activeClassName="formTitleLink-active"
-                className="formTitleLink"
-                onClick={() => setCount(0)}
-              >
-                Sign In
-              </NavLink>
-              or
-              <NavLink
-                exact
-                to="/Login"
-                // activeClassName="formTitleLink-active"
-                className="formTitleLink"
-                onClick={() => setCount(2)}
-              >
-                Sign Up
-              </NavLink>
-              {count === 0 ? <SignIn /> : <SignUp />}
+                          <p className="text-center">
+                            <a data-toggle="tab" onClick={screenSup}>
+                              ¿No tiene cuenta?
+                            </a>
+                          </p>
+                        </Form>
+                      </>
+                    ) : (
+                      <>
+                        <div className="d-flex">
+                          <div className="w-100">
+                            <h3 className="mb-4">Registrarse</h3>
+                          </div>
+                          <div className="w-100">
+                            <p className="social-media d-flex justify-content-end">
+                              <a
+                                href="#"
+                                className="social-icon d-flex align-items-center justify-content-center"
+                              >
+                                <span className="fa fa-facebook"></span>
+                              </a>
+                              <a
+                                href="#"
+                                className="social-icon d-flex align-items-center justify-content-center"
+                              >
+                                <span className="fa fa-twitter"></span>
+                              </a>
+                            </p>
+                          </div>
+                        </div>
+                        <Form
+                          name="basic"
+                          initialValues={{
+                            remember: true,
+                          }}
+                          onFinish={onFinishRegister}
+                          autoComplete="off"
+                          className="formFields"
+                        >
+                          <div className="form-group mb-3">
+                            <Form.Item
+                              name="FullName"
+                              label="Nombre completo"
+                              className="label"
+                              style={{ display: "block" }}
+                              rules={[{ required: true }]}
+                            >
+                              <Input className="form-control" />
+                            </Form.Item>
+                          </div>
+                          <div className="form-group mb-3">
+                            <Form.Item
+                              label="Correo electrónico"
+                              name="username"
+                              style={{ display: "block" }}
+                              className="label"
+                              rules={[
+                                {
+                                  required: true,
+                                  message: "Please input your username!",
+                                },
+                              ]}
+                            >
+                              <Input className="form-control" />
+                            </Form.Item>
+                          </div>
+                          <div className="form-group mb-3">
+                            <Form.Item
+                              label="Contraseña"
+                              name="password"
+                              className="label"
+                              style={{ display: "block" }}
+                              rules={[
+                                {
+                                  required: true,
+                                  message: "Please input your password!",
+                                },
+                              ]}
+                            >
+                              <Input.Password className="form-control" />
+                            </Form.Item>
+                          </div>
+                          <Form.Item>
+                            <div className="form-group">
+                              <Button
+                                htmlType="submit"
+                                className="form-control btn btn-primary rounded submit px-3"
+                              >
+                                Registrarse
+                              </Button>
+                            </div>
+                          </Form.Item>
+                          <p className="text-center">
+                            <a data-toggle="tab" onClick={handleClick}>
+                              ¿Ya tienes una cuenta?
+                            </a>
+                          </p>
+                        </Form>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
       </Content>
     </Layout>
   );

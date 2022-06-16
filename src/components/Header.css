@@ -8,11 +8,11 @@
     display: none;
   }
   .Header {
+    position: relative;
     z-index: 3;
-    position: fixed;
     top: 0; /* Stick it to the top */
     max-height: 70px;
-    width: 95%;
+    width: 100%;
 
     display: grid;
     grid-template-areas: "logo nav";

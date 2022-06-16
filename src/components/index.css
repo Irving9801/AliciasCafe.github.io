@@ -4,7 +4,6 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-   
 }
 
 .style__font {
@@ -13,19 +12,23 @@
 }
 
 .divo a {
-
     color: #fff;
     font-size: 16px !important;
     font-weight: 500;
     transition: 0.5s;
     text-decoration: none;
-
 }
-.navbar{
-     background: rgba(40, 44, 47, 0.95);
+.navbar {
+    background: rgba(40, 44, 47, 0.95);
 }
 
 @media (max-width: 801px) {
+    .footer__style {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column !important;
+    }
     #navbar-header {
         display: none;
         position: fixed;
@@ -38,12 +41,11 @@
         padding-bottom: 15px;
     }
 
-    .navbar-expand-lg>.container,
-    .navbar-expand-lg>.container-fluid {
+    .navbar-expand-lg > .container,
+    .navbar-expand-lg > .container-fluid {
         padding-right: 0;
         padding-left: 0;
     }
-
 
     #navbar-header .navbar-collapse {
         margin-top: 15px;
@@ -89,6 +91,3 @@
         display: none;
     }
 }
-    
-
-

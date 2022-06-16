@@ -9,33 +9,111 @@ function About() {
     <Layout className="layout__Main">
       <Header />
       <Content>
-        <div style={{ margin: 10, padding: 10 }}>
-          <Divider orientation="left" plain>
-            <h2>¿Quienes Somos?</h2>
-          </Divider>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne
-          merninisti licere mihi ista probare, quae sunt a te dicta? Refert
-          tamen, quo modo.
-          <Divider orientation="right" plain>
-            <h2>¿Qué Ofrecemos?</h2>
-          </Divider>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne
-          merninisti licere mihi ista probare, quae sunt a te dicta? Refert
-          tamen, quo modo.
-          <Divider plain>
-            <h2>Nuestros Colaboradores</h2>
-          </Divider>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne
-          merninisti licere mihi ista probare, quae sunt a te dicta? Refert
-          tamen, quo modo.
-          {/* <div class="container">
-            <img src="../src/assets/img/depp.jpg" alt="Avatar" class="image" />
-            <div class="overlay">
-              <div class="text">Hello World</div>
+        <main>
+          <header class="site-header site-about-header">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-10 col-12 mx-auto">
+                  <h1 class="text-white">Alicia's Cafe Gourmet</h1>
+
+                  <strong class="text-white">
+                    this is how our kitchen evolved in new digital era
+                  </strong>
+                </div>
+              </div>
             </div>
-          </div>
-        </div> */}
-        </div>
+
+            <div class="overlay"></div>
+          </header>
+
+          <section class="about section-padding bg-white">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 col-12 mb-2">
+                  <h4 class="mb-3">
+                    Crispy Kitchen is the latest Bootstrap 5 HTML template
+                    provided by Tooplate website.
+                  </h4>
+
+                  <a href="news.html" class="custom-btn btn btn-dark mt-3">
+                    Check out News
+                  </a>
+
+                  <a
+                    href="contact.html"
+                    class="custom-btn btn btn-danger mt-3 ms-3"
+                  >
+                    Say Hi
+                  </a>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                  <p className="description_text">
+                    Since this website template is 100% free to use, you can
+                    edit and apply it for your commercial restaurant websites.
+                    There are 6 HTML pages included in this template. Please{" "}
+                    <strong>click "Reservation" button</strong> on the top right
+                    to see the pop-up reservation form.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="about section-padding">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="mb-5">Equipo</h2>
+                </div>
+
+                <div class="col-lg-4 col-12">
+                  <div class="team-thumb">
+                    <img
+                      src="https://t4.ftcdn.net/jpg/04/72/26/31/360_F_472263145_qIPkhZolVX1zIpF4e8SGvIJZ1ZsU4J7j.jpg"
+                      class="img-fluid team-image"
+                      alt=""
+                    />
+
+                    <div class="team-info">
+                      <h4 class="mt-3 mb-0">Sophia</h4>
+
+                      <p>CEO &amp; Founder</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-12 my-lg-0 my-4">
+                  <div class="team-thumb">
+                    <img
+                      src="https://t4.ftcdn.net/jpg/04/72/26/31/360_F_472263145_qIPkhZolVX1zIpF4e8SGvIJZ1ZsU4J7j.jpg"
+                      class="img-fluid team-image"
+                      alt=""
+                    />
+
+                    <h4 class="mt-3 mb-0">Benjamin W.</h4>
+
+                    <p>Restaurant Manager</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-12">
+                  <div class="team-thumb">
+                    <img
+                      src="https://t4.ftcdn.net/jpg/04/72/26/31/360_F_472263145_qIPkhZolVX1zIpF4e8SGvIJZ1ZsU4J7j.jpg"
+                      class="img-fluid team-image"
+                      alt=""
+                    />
+
+                    <h4 class="mt-3 mb-0">Muchen Jack</h4>
+
+                    <p>Senior Chef</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
       </Content>
       <Footer />
     </Layout>

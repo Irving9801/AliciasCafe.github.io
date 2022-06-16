@@ -1,92 +1,168 @@
-.layout__Main {
-  margin: 2%;
+/*=====  End of Special Dishes  ======*/
+/*==================================
+=            RESPONSIVE            =
+==================================*/
+.only-mobile {
+  display: none !important;
 }
 
-.recipe_Main {
-  margin: auto;
-  width: 53%;
-  display: flex;
+@media (max-width: 992px) {
+  .main-home {
+    height: 100%;
+  }
+
+  .boxed-page {
+    padding-top: 100px;
+  }
+
+  #navbar-header {
+    position: fixed;
+    top: 0;
+    height: auto;
+    width: 100%;
+    background-color: #fff;
+    z-index: 11;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  #navbar-header .dropdown-menu {
+    box-shadow: none !important;
+  }
+
+  #navbar-header .navbar-collapse {
+    margin-top: 15px;
+    background: #fff !important;
+  }
+
+  .only-mobile {
+    display: block !important;
+  }
+
+  .only-desktop {
+    display: none !important;
+  }
+
+  .menu-wrap {
+    margin-bottom: 30px;
+  }
+
+  .footer-widget {
+    margin-bottom: 30px;
+  }
+
+  .hero-left {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 
-.recipe__div {
+@media (max-width: 767px) {
+
+  .hero-left,
+  .hero-carousel .owl-item img {
+    height: 600px;
+  }
+
+  .thumb-menu img {
+    height: 90px;
+  }
+
+  .img-2 {
+    height: 500px;
+  }
+}
+
+.col-lg-6 {
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%
+}
+
+/*=====  End of RESPONSIVE  ======*/
+.main-home {
+  height: 600px;
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .main-home {
+    height: calc(100vh - 130px);
+  }
+}
+
+.hero-info {
+  padding-top: 60px;
+}
+
+@media (min-width: 1420px) {
+  .hero-info {
+    padding-top: 140px;
+  }
+}
+
+.hero-info li {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.hero-info .lnr {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.hero-carousel .owl-prev,
+.hero-carousel .owl-next {
+  width: 110px;
+  height: 110px;
+}
+
+.hero-carousel .owl-prev,
+.hero-carousel .owl-next {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: auto;
-  flex-direction: column;
-  width: 70%;
+  justify-content: center;
+  background-color: #fff;
 }
 
-.main_divvv {
-  box-sizing: border_box;
-  background-color: #ffffff;
+.hero-carousel .owl-prev {
+  border-right: 1px solid #f7f8f9;
+}
+
+.hero-carousel .owl-nav {
   display: flex;
-  align-items: flex-start;
-  margin: 20px 0px 0px;
-  position: relative;
-  width: 100%;
-}
-
-.second_div {
-  position: relative;
-  vertical-align: top;
-  width: 320px;
-  height: 320px;
-  overflow: hidden;
-}
-.img_class {
-  height: 320px;
-  width: 320px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-.number {
-  box-sizing: border-box;
-  padding: 20px 40px;
-  position: relative;
-  vertical-align: top;
-  width: calc(100% - 320px);
-  height: 320px;
-  overflow-y: auto;
-}
-.number_son {
-  background-color: #f2f2f2;
-  color: #666666;
-  font-size: 22px;
-  padding: 9px 0;
-  text-align: center;
-  width: 40px;
-}
-.description {
-  color: #666666;
-  font-size: 15px;
-  line-height: 18px;
-  margin: 20px 0px 0px;
-  position: relative;
-}
-.titulo-resaltado {
-    color: #8cc63e;
-    display: block;
-    font-size: 20px;
-    font-weight: bold;
-    padding-bottom: 20px;
-    text-decoration: none;
-}
-.btn-receta-tip {
-    background-color: #8cc63e;
-    border-radius: 6px;
-    color: #ffffff;
-    display: table;
-    font-size: 15px;
-    font-weight: 900;
-    line-height: 18px;
-    margin: 15px 0 0;
-    padding: 8px 5px 7px 11px;
-    text-transform: uppercase;
-    width: 150px;
-    height: 3rem;
+  bottom: 0;
+  right: 0;
 }
 
-/* menu css */
+.hero-carousel .owl-item img {
+  height: 600px;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+@media (min-width: 992px) {
+  .hero-carousel .owl-item img {
+    height: calc(100vh - 130px);
+  }
+}
+
+@media (min-width: 992px) {
+  .col-lg-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}.mb-5, .my-5 {
+  margin-bottom: 3rem !important;
+}
+.display-4 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+h1, h2 {
+  font-weight: 700;
+}
