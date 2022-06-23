@@ -3,7 +3,6 @@ import { Layout, Divider, Row, Col } from "antd";
 import "./about.css";
 import Footer from "../components/FooterComponent";
 import Header from "../components/Header";
-import GoogleMaps from "simple-react-google-maps";
 const { Content } = Layout;
 function About() {
   return (
