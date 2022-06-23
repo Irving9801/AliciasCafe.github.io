@@ -1,6 +1,6 @@
 {
   "name": "alicias-cafe",
-  "proxy": "http://127.0.0.1:5000",
+  "proxy": "https://alcias-cafe-front.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
