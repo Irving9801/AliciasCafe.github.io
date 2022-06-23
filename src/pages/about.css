@@ -71,9 +71,27 @@
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
-.mx-auto h1{
+
+.mx-auto h1 {
   font-size: 76px;
   --bs-text-opacity: 1;
-  color: rgba(255,255,255,1)!important;
+  color: rgba(255, 255, 255, 1) !important;
   font-weight: 700;
+}
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 50%;
+  width: 90%;
+  position: absolute;
+  margin:0 4rem;
+
 }

@@ -1,40 +1,21 @@
-import React from "react";
-import { Card, Layout, Row, Col, Typography, Image, Button } from "antd";
+import React, { useEffect } from "react";
+import { Layout } from "antd";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
-import hamburgesa from "../assets/img/recetas/hamburguesa.jpg";
 import "../assets/css/pages/recetas.css";
+import { useDispatch, useSelector } from "react-redux";
 import receta1 from "../assets/recipes/recipe-1.jpeg";
+import { listRecipes } from "../redux/action/recipesAction";
 const { Content } = Layout;
-const { Meta } = Card;
-const { Title } = Typography;
-const recetas = [
-  {
-    img: hamburgesa,
-    title: "Cheesy House Burguer",
-    title1:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-  {
-    img: hamburgesa,
-    title: "Cheesy House Burguer",
-    title1:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-  {
-    img: hamburgesa,
-    title: "Cheesy House Burguer",
-    title1:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-  {
-    img: hamburgesa,
-    title: "Cheesy House Burguer",
-    title1:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  },
-];
+
 const Recetas = () => {
+  const dispatch = useDispatch();
+  const listarRecetas = useSelector(
+    (state) => state.recipes.listRecipes.recipes
+  );
+  useEffect(() => {
+    dispatch(listRecipes());
+  }, [dispatch]);
   return (
     <Layout className="layout__Main">
       <Header />
@@ -42,7 +23,7 @@ const Recetas = () => {
         <main class="page">
           <header class="hero">
             <div class="hero-container">
-            <div class="row">
+              <div class="row">
                 <div class="col-lg-10 col-12 mx-auto">
                   <h1 class="text-white">Alicia's Cafe Gourmet</h1>
 
@@ -63,47 +44,23 @@ const Recetas = () => {
                 <a href="tag-template.html">Food (4)</a>
               </div>
             </div>
-            <div class="recipes-list">
-              <a href="/procedure" class="recipe">
-                <img
-                  src={receta1}
-                  class="img recipe-img"
-                  alt=""
-                />
-                <h5>Carne Asada</h5>
-                <p>Prep : 15min | Cook : 5min</p>
-              </a>
-
-              <a href="single-recipe.html" class="recipe">
-                <img
-                  src="./assets/recipes/recipe-2.jpeg"
-                  class="img recipe-img"
-                  alt=""
-                />
-                <h5>Greek Ribs</h5>
-                <p>Prep : 15min | Cook : 5min</p>
-              </a>
-
-              <a href="single-recipe.html" class="recipe">
-                <img
-                  src="./assets/recipes/recipe-3.jpeg"
-                  class="img recipe-img"
-                  alt=""
-                />
-                <h5>Vegetable Soup</h5>
-                <p>Prep : 15min | Cook : 5min</p>
-              </a>
-
-              <a href="single-recipe.html" class="recipe">
-                <img
-                  src="./assets/recipes/recipe-4.jpeg"
-                  class="img recipe-img"
-                  alt=""
-                />
-                <h5>Banana Pancakes</h5>
-                <p>Prep : 15min | Cook : 5min</p>
-              </a>
-            </div>
+            {listarRecetas !== undefined ? (
+              <div class="recipes-list">
+                {listarRecetas.map((item) => (
+                  <>
+                    <a href={`/procedure/${item._id}`} className="recipe">
+                      <img src={receta1} class="img recipe-img" alt="" />
+                      <h5>{item.nameRecipes}</h5>
+                      <p>
+                        Prep : {item.preTime} | Cook : {item.cookTime}
+                      </p>
+                    </a>
+                  </>
+                ))}
+              </div>
+            ) : (
+              <div>Cargando...</div>
+            )}
           </section>
         </main>
       </Content>

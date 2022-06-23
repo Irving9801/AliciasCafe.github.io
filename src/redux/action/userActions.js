@@ -4,10 +4,10 @@ import {
   USER_REGISTER_FAIL,
   USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
-
   USER_LOGIN_FAIL,
-  USER_LOGIN_REQUEST
+  USER_LOGIN_REQUEST,
 } from "../../constants/userConstants";
+import { AC_MAIN } from "../../API";
 export const register = (name, email, password) => async (dispatch) => {
   try {
     dispatch({
@@ -21,7 +21,7 @@ export const register = (name, email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "https://alicias-cafe.herokuapp.com/api/users",
+      `${AC_MAIN}api/users`,
       { name, email, password },
       config
     );
@@ -50,23 +50,21 @@ export const register = (name, email, password) => async (dispatch) => {
 
 export const login = (email, password) => {
   return async (dispatch) => {
-
     try {
       dispatch({
         type: USER_LOGIN_REQUEST,
-      })
-      const { data } = await axios.post(
-        "https://alicias-cafe.herokuapp.com/api/users/login",
-        {
-          email,
-          password,
-        }
-      );
+      });
+      const { data } = await axios.post(`${AC_MAIN}api/users/login`, {
+        email,
+        password,
+      });
       dispatch({
         type: USER_LOGIN_SUCCESS,
         payload: data,
       });
-      window.location = "/Admin"
+      if (data.isAdmin) {
+        window.location = "/Admin";
+      }
     } catch (error) {
       dispatch({
         type: USER_LOGIN_FAIL,
@@ -74,7 +72,7 @@ export const login = (email, password) => {
           error.response && error.response.data.message
             ? error.response.data.message
             : error.message,
-      })
+      });
     }
   };
 };

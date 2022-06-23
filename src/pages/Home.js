@@ -26,56 +26,55 @@ export default function Home() {
     <Layout className="layout__Main">
       <Header />
       <Content>
-        <div className="main-home">
-          <div className="container">
-            <div class="row d-flex align-items-center">
-              <div className="col-lg-6 hero-left">
-                <h1 className="display-4 mb-5">We Love Delicious Foods!</h1>
-                <div className="mb-2">
-                  <a
-                    className="btn btn-primary btn-shadow btn-lg"
-                    href="#"
-                    role="button"
-                  >
-                    Explore Menu
-                  </a>
-                  <a
-                    className="btn btn-icon btn-lg"
-                    href="https://player.vimeo.com/video/33110953"
-                    data-featherlight="iframe"
-                    data-featherlight-iframe-allowfullscreen="true"
-                  >
-                    <span className="lnr lnr-film-play"></span>
-                    Play Video
-                  </a>
+        <header id="header">
+          <div class="intro">
+            <div class="overlay">
+              <div class="container">
+                <div class="row">
+                  <div class="intro-text">
+                    <h1>Alicia's Cafe Gourmet</h1>
+                    <p>Pedidos: 933-7450</p>
+                  </div>
                 </div>
-
-                <ul className="hero-info list-unstyled d-flex text-center mb-0">
-                  <li className="border-right">
-                    <span className="lnr lnr-rocket"></span>
-                    <h5>Fast Delivery</h5>
-                  </li>
-                  <li className="border-right">
-                    <span className="lnr lnr-leaf"></span>
-                    <h5>Fresh Food</h5>
-                  </li>
-                  <li className="">
-                    <span className="lnr lnr-bubble"></span>
-                    <h5>24/7 Support</h5>
-                  </li>
-                </ul>
               </div>
-              <div class="col-lg-6 hero-right">
-                <div class="owl-carousel owl-theme hero-carousel">
-                  <div class="item">
-                    <img class="img-fluid" src="img/hero-1.jpg" alt="" />
-                  </div>
-                  <div class="item">
-                    <img class="img-fluid" src="img/hero-2.jpg" alt="" />
-                  </div>
-                  <div class="item">
-                    <img class="img-fluid" src="img/hero-3.jpg" alt="" />
-                  </div>
+            </div>
+          </div>
+        </header>
+
+        <div id="features" class="text-center">
+          <div class="container">
+            <div class="section-title">
+              <h2>Nuestros Especiales</h2>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-4">
+                <div class="features-item">
+                  <h3>Lorem ipsum dolor</h3>
+                  <img src="https://media-cdn.tripadvisor.com/media/photo-p/14/54/1e/21/photo0jpg.jpg" class="img-responsive" alt="" />
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Duis sed dapibus leo nec ornare diam sed commodo.
+                  </p>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-4">
+                <div class="features-item">
+                  <h3>Consectetur adipiscing</h3>
+                  <img src="https://media-cdn.tripadvisor.com/media/photo-p/14/54/1e/21/photo0jpg.jpg" class="img-responsive" alt="" />
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Duis sed dapibus leo nec ornare diam sed commodo.
+                  </p>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-4">
+                <div class="features-item">
+                  <h3>Duis sed dapibus</h3>
+                  <img src="https://media-cdn.tripadvisor.com/media/photo-p/14/54/1e/21/photo0jpg.jpg" class="img-responsive" alt="" />
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Duis sed dapibus leo nec ornare diam sed commodo.
+                  </p>
                 </div>
               </div>
             </div>

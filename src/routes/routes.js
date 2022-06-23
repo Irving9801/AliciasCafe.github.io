@@ -8,8 +8,7 @@ import Login from "../pages/Login";
 import Profile from "../admin/pages/Profile";
 import Homes from "../admin/pages/Home";
 import Tables from "../admin/pages/Tables";
-import Billing from "../admin/pages/Billing";
-import Rtl from "../admin/pages/Rtl";
+import Billing from "../admin/pages/Billing"
 import Index from "../admin/app";
 import Ecommerce from "../pages/ecommerce";
 import Procedure from "../pages/procedure";
@@ -26,12 +25,11 @@ function Connection() {
           <Route path="/Login" element={<Login />} />
           <Route path="/tienda" element={<Ecommerce />} />
           <Route path="/Admin" element={<Index />} />
-          <Route path="/procedure" element={<Procedure />} />
+          <Route path="/procedure/:id" element={<Procedure />} />
           {/* <Main> */}
           <Route path="/dashboard" element={<Homes />} />
           <Route path="/tables" element={<Tables />} />
           <Route path="/billing" element={<Billing />} />
-          <Route path="/rtl" element={<Rtl />} />
           <Route path="/profile" element={<Profile />} />
           {/* </Main> */}
         </Routes>

@@ -6,10 +6,12 @@ import { productosReducers } from "../redux/reducers/productosReducers";
 import promise from "redux-promise";
 import { ENVIRONMENT } from "../API";
 import logger from "redux-logger";
+import { recipesReducers } from "../redux/reducers/recipesReducers";
 const reducer = combineReducers({
   userRegister: userRegisterReducer,
   productos: productosReducers,
-  login:userLoginReducer
+  login:userLoginReducer,
+  recipes: recipesReducers
 });
 const initialState = {
   // cart: {

@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../assets/css/pages/procedure.css";
-import { Divider, Steps } from "antd";
+import { Steps } from "antd";
 
-import { Card, Layout, Row, Col, Typography, Image, Button } from "antd";
+import { Layout } from "antd";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
 import receta1 from "../assets/recipes/recipe-1.jpeg";
+import { getRecipesById } from "../redux/action/recipesAction";
 const { Content } = Layout;
 const { Step } = Steps;
-const procedure = () => {
+const procedure = (props) => {
+  const dispatch = useDispatch();
+  let params = window.location.pathname.slice(11);
+
+  const recipeById = useSelector((state) => state.recipes.listById);
+  useEffect(() => {
+    dispatch(getRecipesById(params));
+  }, [dispatch]);
+  let ingredientes = recipeById.Ingredientes;
   return (
     <Layout className="layout__Main">
       <Header />
@@ -18,27 +28,20 @@ const procedure = () => {
             <section class="recipe-hero">
               <img src={receta1} class="recipe-img-single" />
               <article class="recipe-info">
-                <h2>Banana Pancakes</h2>
+                <h2>{recipeById.nameRecipes}</h2>
                 <p className="description_text">
-                  Shabby chic humblebrag banh mi bushwick, banjo kale chips
-                  meggings. Cred selfies sartorial, cloud bread disrupt blue
-                  bottle seitan. Dreamcatcher tousled bitters, health goth vegan
-                  venmo whatever street art lyft shabby chic pitchfork beard.
-                  Drinking vinegar poke tbh, iPhone coloring book polaroid
-                  truffaut tousled ramps pug trust fund letterpress. Portland
-                  four loko austin chicharrones bitters single-origin coffee.
-                  Leggings letterpress occupy pour-over.
+                  {recipeById.descriptionRecipes}
                 </p>
                 <div class="recipe-icons">
                   <article>
                     <i class="fas fa-clock"></i>
                     <h5>prep time</h5>
-                    <p>30 min.</p>
+                    <p>{recipeById.preTime}</p>
                   </article>
                   <article>
                     <i class="far fa-clock"></i>
                     <h5>cook time</h5>
-                    <p>15 min.</p>
+                    <p>{recipeById.cookTime}</p>
                   </article>
                   <article>
                     <i class="fas fa-user-friends"></i>
@@ -68,12 +71,18 @@ const procedure = () => {
                 </Steps>
               </article>
               <article class="second-column">
-                <div>
-                  <h4>Ingredientes</h4>
-                  <p class="single-ingredient">1 1/2 cups dry pancake mix</p>
-                  <p class="single-ingredient">1/2 cup flax seed meal</p>
-                  <p class="single-ingredient">1 cup skim milk</p>
-                </div>
+                {ingredientes !== undefined ? (
+                  <div>
+                    <h4>Ingredientes</h4>
+                    {ingredientes.map((item, index) => (
+                      <div key={index}>
+                        <p class="single-ingredient">{item.name}</p>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div>Cargando...</div>
+                )}
                 <div>
                   <h4>tools</h4>
                   <p class="single-tool">Hand Blender</p>

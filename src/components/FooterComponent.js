@@ -71,49 +71,6 @@ export default function App() {
                     xl={10}
                   >
                     <div>
-                      <h4 style={{ color: "white" }}>Horario</h4>
-
-                      <Row>
-                        <Col span={8}>Lunes</Col>
-                        <Col span={8} offset={8}>
-                          9:00 - 02:00
-                        </Col>
-                        <Col span={8}>Martes</Col>
-                        <Col span={8} offset={8}>
-                          9:00 - 02:00
-                        </Col>
-                        <Col span={8}>Miercoles</Col>
-                        <Col span={8} offset={8}>
-                          9:00 - 02:00
-                        </Col>
-                        <Col span={8}>Jueves</Col>
-                        <Col span={8} offset={8}>
-                          9:00 - 02:00
-                        </Col>
-                        <Col span={8}>Viernes</Col>
-                        <Col span={8} offset={8}>
-                          9:00 - 02:00
-                        </Col>
-                        <Col span={8}>Sabado</Col>
-                        <Col span={8} offset={8}>
-                          9:00 - 02:00
-                        </Col>
-                        <Col span={8}>Domingo</Col>
-                        <Col span={8} offset={8}>
-                          Cerrado
-                        </Col>
-                      </Row>
-                    </div>
-                  </Col>
-                  <Col
-                    className="gutter-row"
-                    xs={24}
-                    sm={4}
-                    md={6}
-                    lg={8}
-                    xl={10}
-                  >
-                    <div>
                       <h4 style={{ color: "white" }}>Boletín Informativo</h4>
                       Lorem sjdfhnadnlvllak svlskd vakl ñsv askjd csk cskl nc
                       <Input placeholder="Correo" />

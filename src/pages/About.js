@@ -1,8 +1,9 @@
 import React from "react";
-import { Layout, Divider } from "antd";
+import { Layout, Divider, Row, Col } from "antd";
 import "./about.css";
 import Footer from "../components/FooterComponent";
 import Header from "../components/Header";
+import GoogleMaps from "simple-react-google-maps";
 const { Content } = Layout;
 function About() {
   return (
@@ -110,6 +111,65 @@ function About() {
                     <p>Senior Chef</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </section>
+          <section class="about section-padding">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="mb-5">Horarios</h2>
+                </div>
+                <Row>
+                  <Col span={8}>Lunes</Col>
+                  <Col span={8} offset={8}>
+                    9:00 - 02:00
+                  </Col>
+                  <Col span={8}>Martes</Col>
+                  <Col span={8} offset={8}>
+                    9:00 - 02:00
+                  </Col>
+                  <Col span={8}>Miercoles</Col>
+                  <Col span={8} offset={8}>
+                    9:00 - 02:00
+                  </Col>
+                  <Col span={8}>Jueves</Col>
+                  <Col span={8} offset={8}>
+                    9:00 - 02:00
+                  </Col>
+                  <Col span={8}>Viernes</Col>
+                  <Col span={8} offset={8}>
+                    9:00 - 02:00
+                  </Col>
+                  <Col span={8}>Sabado</Col>
+                  <Col span={8} offset={8}>
+                    9:00 - 02:00
+                  </Col>
+                  <Col span={8}>Domingo</Col>
+                  <Col span={8} offset={8}>
+                    Cerrado
+                  </Col>
+                </Row>
+              </div>
+            </div>
+          </section>
+          <section class="about section-padding">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="mb-5">Ubicacion</h2>
+                </div>
+
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1141.168724778488!2d-81.31669315715396!3d8.009971310739733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fae396b6a9a78d1%3A0x30d43c6eb3c73218!2sAlicia&#39;s%20Cafe%20Gourmet!5e0!3m2!1ses-419!2spa!4v1655356351713!5m2!1ses-419!2spa"
+                  width="600"
+                  height="450"
+                  frameborder="0"
+                  style={{ border: 0 }}
+                  allowfullscreen=""
+                  aria-hidden="false"
+                  tabindex="0"
+                ></iframe>
               </div>
             </div>
           </section>
