@@ -9,7 +9,7 @@ import Profile from "../admin/pages/Profile";
 import Homes from "../admin/pages/Home";
 import Tables from "../admin/pages/Tables";
 import Billing from "../admin/pages/Billing"
-import Index from "../admin/app";
+import Index from "../admin/App";
 import Ecommerce from "../pages/ecommerce";
 import Procedure from "../pages/procedure";
 function Connection() {
