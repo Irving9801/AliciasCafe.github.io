@@ -1,105 +1,55 @@
 import React from "react";
-import { MDBFooter, MDBContainer } from "mdb-react-ui-kit";
-import {
-  FacebookOutlined,
-  TwitterOutlined,
-  InstagramOutlined,
-} from "@ant-design/icons";
-import { Button, Input, Image, Row, Col } from "antd";
 import logo from "../assets/img/logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./footer.css";
+import { FacebookOutlined, InstagramOutlined } from "@ant-design/icons";
 export default function App() {
   return (
-    <MDBFooter className="text-center" color="white" bgColor="dark">
-      <MDBContainer className="p-4">
-        <section className="mb-4">
-          <a
-            className="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-          >
-            <FacebookOutlined style={{ fontSize: 25, color: "brown" }} />
-          </a>
-
-          <a
-            className="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-          >
-            <TwitterOutlined style={{ fontSize: 25, color: "brown" }} />
-          </a>
-
-          <a
-            className="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-          >
-            <InstagramOutlined style={{ fontSize: 25, color: "brown" }} />
-          </a>
-        </section>
-
-        <section className="">
-          <form action="">
-            <div className="row d-flex justify-content-center">
-              <div>
-                <Row
-                  gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}
-                  className="footer__style"
-                >
-                  <Col
-                    className="gutter-row"
-                    xs={24}
-                    sm={4}
-                    md={6}
-                    lg={8}
-                    xl={10}
-                  >
-                    <div>
-                      <Image src={logo} width={100}></Image>
-                      <br></br>
-                      loremmksdnvñosdnv kalsdncñNVA ÑWJKAS BKKAK SLKKLDVÑND
-                      <div>
-                        <br></br>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col
-                    className="gutter-row"
-                    xs={24}
-                    sm={4}
-                    md={6}
-                    lg={8}
-                    xl={10}
-                  >
-                    <div>
-                      <h4 style={{ color: "white" }}>Boletín Informativo</h4>
-                      Lorem sjdfhnadnlvllak svlskd vakl ñsv askjd csk cskl nc
-                      <Input placeholder="Correo" />
-                      <Button
-                        type="primary"
-                        style={{ marginTop: 10 }}
-                        block
-                        danger
-                      >
-                        Enviar
-                      </Button>
-                    </div>
-                  </Col>
-                </Row>
-              </div>
+    <footer>
+      <div className="footer-top">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4 col-lg-4 footer-about wow fadeInUp">
+              <img
+                className="logo-footer"
+                src={logo}
+                alt="logo-footer"
+                data-at2x={logo}
+              />
+              <p className="footer-p">
+                We are a young company always looking for new and creative ideas
+                to help you with our products in your everyday work.
+              </p>
             </div>
-          </form>
-        </section>
-      </MDBContainer>
-
-      <div
-        className="text-center p-3"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-      >
-        © 2022 Copyright:
-        <a className="text-white" href="#">
-          Anikawi - Irvincio
-        </a>
+            <div className="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown">
+              <h3>Contactanos</h3>
+              <p>
+                <i className="fas fa-map-marker-alt"></i> Via Rossini 10, 10136
+                Turin Italy
+              </p>
+              <p>
+                <i className="fas fa-phone"></i> Phone: (0039) 333 12 68 347
+              </p>
+              <p>
+                <i className="fas fa-envelope"></i> Email:{" "}
+                <a href="mailto:hello@domain.com">hello@domain.com</a>
+              </p>
+              <p>
+                <i className="fab fa-skype"></i> Skype: you_online
+              </p>
+            </div>
+            <div className="col-md-4 col-lg-3 footer-social wow fadeInUp">
+              <h3>Siguenos</h3>
+              <p>
+                <FacebookOutlined style={{ fontSize: "36px", color: "#08c" }} />
+                <InstagramOutlined
+                  style={{ fontSize: "36px", color: "#08c" }}
+                />
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </MDBFooter>
+    </footer>
   );
 }

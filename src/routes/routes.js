@@ -12,6 +12,7 @@ import Billing from "../admin/pages/Billing"
 import Index from "../admin/App";
 import Ecommerce from "../pages/ecommerce";
 import Procedure from "../pages/procedure";
+import DetalisEcommerce from "../pages/DetalisEcommerce";
 function Connection() {
   return (
     <>
@@ -31,6 +32,7 @@ function Connection() {
           <Route path="/tables" element={<Tables />} />
           <Route path="/billing" element={<Billing />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/details/:id" element={<DetalisEcommerce />} />
           {/* </Main> */}
         </Routes>
       </BrowserRouter>
