@@ -1,19 +1,16 @@
 import React, { useEffect } from "react";
 import "../assets/css/pages/procedure.css";
-import { Steps } from "antd";
-
-import { Layout } from "antd";
-import { useDispatch, useSelector } from "react-redux";
+import { Steps, Layout } from "antd";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
 import receta1 from "../assets/recipes/recipe-1.jpeg";
 import { getRecipesById } from "../redux/action/recipesAction";
+import { useDispatch, useSelector } from "react-redux";
 const { Content } = Layout;
 const { Step } = Steps;
-const procedure = (props) => {
+const Procedure = () => {
   const dispatch = useDispatch();
   let params = window.location.pathname.slice(11);
-
   const recipeById = useSelector((state) => state.recipes.listById);
   useEffect(() => {
     dispatch(getRecipesById(params));
@@ -99,4 +96,4 @@ const procedure = (props) => {
     </Layout>
   );
 };
-export default procedure;
+export default Procedure;
