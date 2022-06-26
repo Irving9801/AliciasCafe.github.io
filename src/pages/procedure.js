@@ -15,7 +15,7 @@ const Procedure = () => {
   useEffect(() => {
     dispatch(getRecipesById(params));
   }, [dispatch]);
-  let ingredientes = recipeById.Ingredientes;
+  let ingredientes = recipeById?.Ingredientes;
   return (
     <Layout className="layout__Main">
       <Header />
@@ -25,20 +25,20 @@ const Procedure = () => {
             <section class="recipe-hero">
               <img src={receta1} class="recipe-img-single" />
               <article class="recipe-info">
-                <h2>{recipeById.nameRecipes}</h2>
+                <h2>{recipeById?.nameRecipes}</h2>
                 <p className="description_text">
-                  {recipeById.descriptionRecipes}
+                  {recipeById?.descriptionRecipes}
                 </p>
                 <div class="recipe-icons">
                   <article>
                     <i class="fas fa-clock"></i>
                     <h5>prep time</h5>
-                    <p>{recipeById.preTime}</p>
+                    <p>{recipeById?.preTime}</p>
                   </article>
                   <article>
                     <i class="far fa-clock"></i>
                     <h5>cook time</h5>
-                    <p>{recipeById.cookTime}</p>
+                    <p>{recipeById?.cookTime}</p>
                   </article>
                   <article>
                     <i class="fas fa-user-friends"></i>
@@ -52,7 +52,7 @@ const Procedure = () => {
               <article>
                 <h4>Instrucciones</h4>
 
-                {recipeById.Instruccion?.map((item, index) => (
+                {recipeById?.Instruccion?.map((item, index) => (
                   <Steps direction="vertical" current>
                     <Step title={"paso " + `${index + 1}`} description={item} />
                   </Steps>
