@@ -1,20 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../assets/css/pages/login.css";
 import { Layout, Button, Input, Form } from "antd";
 import { login, register } from "../redux/action/userActions";
-import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 const { Content } = Layout;
 const Login = () => {
   const [visible, setVisible] = useState(false);
+  let navigate = useNavigate();
   const dispatch = useDispatch();
   const onFinish = (values) => {
     dispatch(login(values.username, values.password));
   };
+  const loginData = useSelector((state) => state.login.userInfo);
 
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
-  };
+  useEffect(() => {
+    if (loginData?.isAdmin === true) {
+      navigate("/admin");
+    }
+  }, [loginData]);
+
   const onFinishRegister = (values) => {
     dispatch(register(values.FullName, values.username, values.password));
   };
@@ -63,7 +69,6 @@ const Login = () => {
                             remember: true,
                           }}
                           onFinish={onFinish}
-                          onFinishFailed={onFinishFailed}
                           autoComplete="off"
                           class="signin-form"
                         >

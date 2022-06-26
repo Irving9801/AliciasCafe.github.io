@@ -6,10 +6,13 @@ import {
   PRODUCT_LIST_SUCCESS,
   PRODUCT_LIST_SHOW,
   PRODUCT_LIST_HIDE,
-
   PRODUCTS_ID_SUCCESS,
   PRODUCTS_ID_SHOW,
   PRODUCTS_ID_HIDE,
+
+  GET_MENU_ID_SUCCESS,
+  GET_MENU_ID_SHOW,
+  GET_MENU_ID_HIDE,
 } from "../../constants/userConstants";
 import { AC_MAIN } from "../../API";
 export const listMenu = () => async (dispatch) => {
@@ -143,6 +146,39 @@ export const getProductsById = (id) => async (dispatch) => {
   } finally {
     dispatch({
       type: PRODUCTS_ID_HIDE,
+    });
+  }
+};
+
+export const getMenuById = (id) => async (dispatch) => {
+  dispatch({
+    type: GET_MENU_ID_SHOW,
+  });
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const { data } = await axios.get(`${AC_MAIN}api/menu/${id}`, config);
+    dispatch({
+      type: GET_MENU_ID_SUCCESS,
+      payload: data,
+    });
+
+    localStorage.setItem("listById", JSON.stringify(data));
+  } catch (error) {
+    dispatch({
+      // type: USER_REGISTER_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  } finally {
+    dispatch({
+      type: GET_MENU_ID_HIDE,
     });
   }
 };

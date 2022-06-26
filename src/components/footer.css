@@ -37,14 +37,14 @@
 
 .footer-contact {
     justify-content: left;
-    align-items: start;
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
 }
 
 .footer-about {
     justify-content: left;
-    align-items: start;
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
 }

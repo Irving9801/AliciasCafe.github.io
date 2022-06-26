@@ -1,15 +1,13 @@
 import React, { useEffect } from "react";
 import "../assets/css/pages/procedure.css";
-import { Steps, Layout } from "antd";
+import { Layout } from "antd";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
 import receta1 from "../assets/recipes/recipe-1.jpeg";
-import { getRecipesById } from "../redux/action/recipesAction";
 import { useDispatch, useSelector } from "react-redux";
 import "./details.css";
 import { getProductsById } from "../redux/action/productosActions";
 const { Content } = Layout;
-const { Step } = Steps;
 const DetalisEcommerce = () => {
   const dispatch = useDispatch();
   let params = window.location.pathname.slice(9);

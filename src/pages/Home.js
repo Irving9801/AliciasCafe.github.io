@@ -1,10 +1,8 @@
 import React from "react";
-import "antd/dist/antd.min.css";
 import { Layout } from "antd";
 import Footer from "../components/FooterComponent";
 import Header from "../components/Header";
 import "../assets/css/pages/style.css";
-import Principalpage from "../components/Principalpage";
 // import { useSplash } from "../components/SplashProvider";
 const { Content } = Layout;
 
@@ -40,7 +38,6 @@ export default function Home() {
             </div>
           </div>
         </header>
-
         <div id="features" class="text-center">
           <div class="container">
             <div class="section-title">

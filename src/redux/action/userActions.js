@@ -8,6 +8,7 @@ import {
   USER_LOGIN_REQUEST,
 } from "../../constants/userConstants";
 import { AC_MAIN } from "../../API";
+
 export const register = (name, email, password) => async (dispatch) => {
   try {
     dispatch({
@@ -63,7 +64,7 @@ export const login = (email, password) => {
         payload: data,
       });
       if (data.isAdmin) {
-        window.location = "/Admin";
+        // push("/Admin");
       }
     } catch (error) {
       dispatch({

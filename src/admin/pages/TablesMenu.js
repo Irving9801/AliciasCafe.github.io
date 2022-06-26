@@ -1,44 +1,54 @@
 import { Row, Col, Card, Table, Button, Avatar, Typography } from "antd";
 import React, { useEffect } from "react";
+
+// Images
 import Main from "../components/layout/Main";
 import { useDispatch, useSelector } from "react-redux";
-import { listRecipes } from "../../redux/action/recipesAction";
 import { Link } from "react-router-dom";
+import { listMenu } from "../../redux/action/productosActions";
 
 // table code start
 const columns = [
   {
-    title: "NOMBRE",
-    dataIndex: "image",
-    key: "image",
+    title: "AUTHOR",
+    dataIndex: "name",
+    key: "name",
     width: "32%",
   },
   {
     title: "CATEGORIA",
+    dataIndex: "category",
+    key: "category",
+  },
+
+  {
+    title: "STATUS",
     key: "category",
     dataIndex: "category",
   },
   {
-    title: "ACCION",
+    title: "EMPLOYED",
+    key: "createdAt",
+    dataIndex: "createdAt",
+  },
+  {
+    title: "Action",
     key: "_id",
     dataIndex: "_id",
   },
 ];
 const { Title } = Typography;
-function Tables() {
+function TablesMenu() {
   const dispatch = useDispatch();
-  const listarRecetas = useSelector(
-    (state) => state.recipes.listRecipes.recipes
-  );
+  const listarMenu = useSelector((state) => state.productos.listMenu.products);
   useEffect(() => {
-    dispatch(listRecipes());
+    dispatch(listMenu());
   }, [dispatch]);
-
   let dataTables = [];
-  listarRecetas?.map((item, index) =>
+  listarMenu?.map((item, index) =>
     dataTables.push({
       key: `${index}`,
-      image: (
+      name: (
         <>
           <Avatar.Group>
             <Avatar
@@ -48,7 +58,7 @@ function Tables() {
               src={item.image}
             ></Avatar>
             <div className="avatar-info">
-              <Title level={5}>{item.nameRecipes}</Title>
+              <Title level={5}>{item.name}</Title>
             </div>
           </Avatar.Group>
         </>
@@ -80,7 +90,7 @@ function Tables() {
         <>
           <div className="ant-employed">
             <Button>
-              <Link to={`/admin/details/${item._id}`}>Detalles</Link>
+              <Link to={`/admin/menu/${item._id}`}>Detalles</Link>
             </Button>
           </div>
         </>
@@ -113,4 +123,4 @@ function Tables() {
   );
 }
 
-export default Tables;
+export default TablesMenu;

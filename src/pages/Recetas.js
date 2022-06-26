@@ -44,23 +44,19 @@ const Recetas = () => {
                 <a href="tag-template.html">Food (4)</a>
               </div>
             </div>
-            {listarRecetas !== undefined ? (
-              <div class="recipes-list">
-                {listarRecetas.map((item) => (
-                  <>
-                    <a href={`/procedure/${item._id}`} className="recipe">
-                      <img src={receta1} class="img recipe-img" alt="" />
-                      <h5>{item.nameRecipes}</h5>
-                      <p>
-                        Prep : {item.preTime} | Cook : {item.cookTime}
-                      </p>
-                    </a>
-                  </>
-                ))}
-              </div>
-            ) : (
-              <div>Cargando...</div>
-            )}
+            <div class="recipes-list">
+              {listarRecetas?.map((item) => (
+                <>
+                  <a href={`/procedure/${item._id}`} className="recipe">
+                    <img src={receta1} class="img recipe-img" alt="" />
+                    <h5>{item.nameRecipes}</h5>
+                    <p>
+                      Prep : {item.preTime} | Cook : {item.cookTime}
+                    </p>
+                  </a>
+                </>
+              ))}
+            </div>
           </section>
         </main>
       </Content>

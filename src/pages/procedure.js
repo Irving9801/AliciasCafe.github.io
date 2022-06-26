@@ -52,41 +52,19 @@ const Procedure = () => {
               <article>
                 <h4>Instrucciones</h4>
 
-                <Steps direction="vertical" current>
-                  <Step
-                    title="Paso 1"
-                    description="I'm baby mustache man braid fingerstache small batch venmo succulents shoreditch."
-                  />
-                  <Step
-                    title="Paso 2"
-                    description="Pabst pitchfork you probably haven't heard of them, asymmetrical seitan tousled succulents wolf banh mi man bun bespoke selfies freegan ethical hexagon."
-                  />
-                  <Step
-                    title="Paso 3"
-                    description="Polaroid iPhone bitters chambray. Cornhole swag kombucha live-edge."
-                  />
-                </Steps>
-              </article>
+                {recipeById.Instruccion?.map((item, index) => (
+                  <Steps direction="vertical" current>
+                    <Step title={"paso " + `${index + 1}`} description={item} />
+                  </Steps>
+                ))}
+              </article>-
               <article class="second-column">
-                {ingredientes !== undefined ? (
-                  <div>
-                    <h4>Ingredientes</h4>
-                    {ingredientes.map((item, index) => (
-                      <div key={index}>
-                        <p class="single-ingredient">{item.name}</p>
-                      </div>
-                    ))}
+                <h4>Ingredientes</h4>
+                {ingredientes?.map((item, index) => (
+                  <div key={index}>
+                    <p class="single-ingredient">{item}</p>
                   </div>
-                ) : (
-                  <div>Cargando...</div>
-                )}
-                <div>
-                  <h4>tools</h4>
-                  <p class="single-tool">Hand Blender</p>
-                  <p class="single-tool">Large Heavy Pot With Lid</p>
-                  <p class="single-tool">Measuring Spoons</p>
-                  <p class="single-tool">Measuring Cups</p>
-                </div>
+                ))}
               </article>
             </section>
           </div>

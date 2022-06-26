@@ -9,6 +9,9 @@ import {
   PRODUCTS_ID_SUCCESS,
   PRODUCTS_ID_SHOW,
   PRODUCTS_ID_HIDE,
+  GET_MENU_ID_SUCCESS,
+  GET_MENU_ID_SHOW,
+  GET_MENU_ID_HIDE,
 } from "../../constants/userConstants";
 
 const initialState = {
@@ -17,6 +20,9 @@ const initialState = {
   listProducts: [],
   listProducts: false,
   listProById: [],
+
+  getLoadMenu: false,
+  getMenuById: [],
 };
 export const productosReducers = (state = initialState, action) =>
   produce(state, (draft) => {
@@ -48,6 +54,15 @@ export const productosReducers = (state = initialState, action) =>
         break;
       case PRODUCTS_ID_HIDE:
         draft.loading = false;
+        break;
+      case GET_MENU_ID_SHOW:
+        draft.getLoadMenu = true;
+        break;
+      case GET_MENU_ID_SUCCESS:
+        draft.getMenuById = action.payload;
+        break;
+      case GET_MENU_ID_HIDE:
+        draft.getLoadMenu = false;
         break;
       default:
         return state;
