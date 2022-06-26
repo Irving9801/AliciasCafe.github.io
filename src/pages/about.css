@@ -95,3 +95,12 @@
   margin:0 4rem;
 
 }
+@media (max-width: 600px) {
+  .mx-auto h1 {
+    font-size: 2rem;
+    text-align: center;
+    --bs-text-opacity: 1;
+    color: rgba(255, 255, 255, 1) !important;
+    font-weight: 700;
+  }
+}

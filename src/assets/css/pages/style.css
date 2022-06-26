@@ -5,7 +5,18 @@
 .only-mobile {
   display: none !important;
 }
-
+.intro h1 {
+	font-family: 'Rochester', cursive;
+	color: #fff;
+	font-size: 6em;
+	font-weight: 400;
+	margin-top: 0;
+}
+.intro .overlay {
+  height: 36rem;
+  background: rgba(0,0,0,0.4);
+  top: 6rem;
+}
 @media (max-width: 992px) {
   .main-home {
     height: 100%;
@@ -58,7 +69,18 @@
 }
 
 @media (max-width: 767px) {
-
+  .intro .overlay {
+    height: 40rem;
+    background: rgba(0,0,0,0.4);
+    top: 0;
+  }
+  .intro h1 {
+    font-family: 'Rochester', cursive;
+    color: #fff;
+    font-size: 3em;
+    font-weight: 400;
+    margin-top: 0;
+  }
   .hero-left,
   .hero-carousel .owl-item img {
     height: 600px;
@@ -180,18 +202,8 @@ h1, h2 {
 	background-size: cover;
 	-o-background-size: cover;
 }
-.intro .overlay {
-  height: 36rem;
-  background: rgba(0,0,0,0.4);
-  top: 6rem;
-}
-.intro h1 {
-	font-family: 'Rochester', cursive;
-	color: #fff;
-	font-size: 6em;
-	font-weight: 400;
-	margin-top: 0;
-}
+
+
 .intro span {
 	color: #a7c44c;
 	font-weight: 600;
@@ -232,14 +244,4 @@ header .intro-text {
 	line-height: 24px;
   font-family: 'Open Sans', serif;
 	margin: 15px 0 30px;
-}
-h2::before {
-  position: absolute;
-  content: "";
-  background: #d43031;
-  height: 2px;
-  width: 70px;
-  bottom: 0;
-  margin-left: -35px;
-  left: 50%;
 }

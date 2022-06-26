@@ -12,9 +12,10 @@ import {
 function DetailsRecipes() {
   let params = window.location.pathname.slice(15);
   const dispatch = useDispatch();
-  // const listarRecetas = useSelector(
-  //   (state) => state.recipes.listRecipes.recipes
-  // );
+  const { nameRecipes, category, preTime } = useSelector(
+    (state) => state.recipes.listById
+  );
+  console.log(nameRecipes);
   useEffect(() => {
     dispatch(getRecipesById(params));
   }, [dispatch]);
@@ -47,14 +48,14 @@ function DetailsRecipes() {
                         className="Tablet, Phone"
                         style={{ padding: "5px" }}
                       >
-                        hola
+                        Nombre de receta
                       </Text>
 
                       <Form.Item>
                         <Input
                           placeholder="Acp Id"
                           readOnly
-                          defaultValue={"No data"}
+                          defaultValue={nameRecipes ? nameRecipes : "No data"}
                         />
                       </Form.Item>
                     </Col>
@@ -69,13 +70,13 @@ function DetailsRecipes() {
                         className="Tablet, Phone"
                         style={{ padding: "5px" }}
                       >
-                        hola
+                        Categoria
                       </Text>
                       <Form.Item>
                         <Input
                           placeholder="Puntaje"
                           readOnly
-                          defaultValue={"No data"}
+                          defaultValue={category ? category : "No data"}
                         />
                       </Form.Item>
                     </Col>
@@ -93,7 +94,147 @@ function DetailsRecipes() {
                         hola
                       </Text>
 
-                      <Form.Item></Form.Item>
+                      <Form.Item>
+                        <Input
+                          placeholder="Puntaje"
+                          readOnly
+                          defaultValue={preTime ? preTime : "No data"}
+                        />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                  <Row gutter={8}>
+                    <Col
+                      xs={{ span: 20 }}
+                      sm={{ span: 20 }}
+                      md={{ span: 8 }}
+                      lg={{ span: 8 }}
+                    >
+                      <Text
+                        strong
+                        className="Tablet, Phone"
+                        style={{ padding: "5px" }}
+                      >
+                        Nombre de receta
+                      </Text>
+
+                      <Form.Item>
+                        <Input
+                          placeholder="Acp Id"
+                          readOnly
+                          defaultValue={nameRecipes ? nameRecipes : "No data"}
+                        />
+                      </Form.Item>
+                    </Col>
+                    <Col
+                      xs={{ span: 20 }}
+                      sm={{ span: 20 }}
+                      md={{ span: 8 }}
+                      lg={{ span: 8 }}
+                    >
+                      <Text
+                        strong
+                        className="Tablet, Phone"
+                        style={{ padding: "5px" }}
+                      >
+                        Categoria
+                      </Text>
+                      <Form.Item>
+                        <Input
+                          placeholder="Puntaje"
+                          readOnly
+                          defaultValue={category ? category : "No data"}
+                        />
+                      </Form.Item>
+                    </Col>
+                    <Col
+                      xs={{ span: 20 }}
+                      sm={{ span: 20 }}
+                      md={{ span: 8 }}
+                      lg={{ span: 8 }}
+                    >
+                      <Text
+                        strong
+                        className="Tablet, Phone"
+                        style={{ padding: "5px" }}
+                      >
+                        hola
+                      </Text>
+
+                      <Form.Item>
+                        <Input
+                          placeholder="Puntaje"
+                          readOnly
+                          defaultValue={preTime ? preTime : "No data"}
+                        />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                  <Row gutter={8}>
+                    <Col
+                      xs={{ span: 20 }}
+                      sm={{ span: 20 }}
+                      md={{ span: 8 }}
+                      lg={{ span: 8 }}
+                    >
+                      <Text
+                        strong
+                        className="Tablet, Phone"
+                        style={{ padding: "5px" }}
+                      >
+                        Nombre de receta
+                      </Text>
+
+                      <Form.Item>
+                        <Input
+                          placeholder="Acp Id"
+                          readOnly
+                          defaultValue={nameRecipes ? nameRecipes : "No data"}
+                        />
+                      </Form.Item>
+                    </Col>
+                    <Col
+                      xs={{ span: 20 }}
+                      sm={{ span: 20 }}
+                      md={{ span: 8 }}
+                      lg={{ span: 8 }}
+                    >
+                      <Text
+                        strong
+                        className="Tablet, Phone"
+                        style={{ padding: "5px" }}
+                      >
+                        Categoria
+                      </Text>
+                      <Form.Item>
+                        <Input
+                          placeholder="Puntaje"
+                          readOnly
+                          defaultValue={category ? category : "No data"}
+                        />
+                      </Form.Item>
+                    </Col>
+                    <Col
+                      xs={{ span: 20 }}
+                      sm={{ span: 20 }}
+                      md={{ span: 8 }}
+                      lg={{ span: 8 }}
+                    >
+                      <Text
+                        strong
+                        className="Tablet, Phone"
+                        style={{ padding: "5px" }}
+                      >
+                        hola
+                      </Text>
+
+                      <Form.Item>
+                        <Input
+                          placeholder="Puntaje"
+                          readOnly
+                          defaultValue={preTime ? preTime : "No data"}
+                        />
+                      </Form.Item>
                     </Col>
                   </Row>
                 </Form>

@@ -36,13 +36,7 @@ const Recetas = () => {
           </header>
           <section class="recipes-container">
             <div class="tags-container">
-              <h4>recipes</h4>
-              <div class="tags-list">
-                <a href="tag-template.html">Beef (1)</a>
-                <a href="tag-template.html">Breakfast (2)</a>
-                <a href="tag-template.html">Carrots (3)</a>
-                <a href="tag-template.html">Food (4)</a>
-              </div>
+            
             </div>
             <div class="recipes-list">
               {listarRecetas?.map((item) => (

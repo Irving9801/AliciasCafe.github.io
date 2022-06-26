@@ -15,10 +15,9 @@ import {
 } from "../../constants/userConstants";
 
 const initialState = {
-  loading: false,
+  loadMenuList: false,
   listMenu: [],
   listProducts: [],
-  listProducts: false,
   listProById: [],
 
   getLoadMenu: false,
@@ -28,13 +27,13 @@ export const productosReducers = (state = initialState, action) =>
   produce(state, (draft) => {
     switch (action.type) {
       case PRODUCT_LIST_MENU_SHOW:
-        draft.loading = true;
+        draft.loadMenuList = true;
         break;
       case PRODUCT_LIST_MENU_SUCCESS:
         draft.listMenu = action.payload;
         break;
       case PRODUCT_LIST_MENU_HIDE:
-        draft.loading = false;
+        draft.loadMenuList = false;
         break;
       case PRODUCT_LIST_SHOW:
         draft.loadingList = true;

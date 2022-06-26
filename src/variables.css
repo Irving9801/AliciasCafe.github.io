@@ -1,7 +1,8 @@
 :root {
+  --variable-color-main: #4b2425;
   --my-font-header: "Open Sans", sans-serif
     /* colors */
-  --primary-100: #e2e0ff;
+    --primary-100: #e2e0ff;
   --primary-200: #c1beff;
   --primary-300: #a29dff;
   --primary-400: #837dff;

@@ -132,4 +132,12 @@ body {
     padding-bottom: 40px;
     border-bottom: 1px solid #ddd;
   }
+  .single-menu img {
+    max-width: 4rem;
+    margin-right: 30px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    padding: 3px;
+    transition: 0.5s;
+  }
 }

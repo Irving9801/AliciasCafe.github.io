@@ -411,6 +411,14 @@
   .recipe-img-single {
     height: 10rem;
   }
+  .hero {
+    top: 0 !important;
+    height: 40vh;
+    position: relative;
+    margin-bottom: 2rem;
+    background: url('../../../assets/main/main.jpeg') center/cover no-repeat;
+    border-radius: var(--borderRadius);
+  }
 }
 
 @media screen and (min-width: 992px) {

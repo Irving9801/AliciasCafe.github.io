@@ -45,11 +45,11 @@ export default function Header() {
           unmountOnExit
         >
           <nav className="Nav">
-            <Link to="/">Incio</Link>
+            <Link to="/">Inicio</Link>
             <Link to="/Menu">Menu</Link>
             <Link to="/recetas">Recetas</Link>
             <Link to="/about">Acerca de</Link>
-            <Link to="/tienda">Contactanos</Link>
+            <Link to="/tienda">Store</Link>
             <Link to="/Login">Sign Up / Registrate</Link>
           </nav>
         </CSSTransition>
