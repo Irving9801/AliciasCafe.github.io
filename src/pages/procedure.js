@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "../assets/css/pages/procedure.css";
-import { Steps, Layout } from "antd";
+import { Steps, Layout, Col, Row } from "antd";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
 import receta1 from "../assets/recipes/recipe-1.jpeg";
@@ -23,7 +23,7 @@ const Procedure = () => {
         <main class="page-recipe-main">
           <div class="recipe-page">
             <section class="recipe-hero">
-              <img src={receta1} class="recipe-img-single" />
+              <img src={recipeById?.image} class="recipe-img-single" />
               <article class="recipe-info">
                 <h2>{recipeById?.nameRecipes}</h2>
                 <p className="description_text">
@@ -48,8 +48,9 @@ const Procedure = () => {
                 </div>
               </article>
             </section>
-            <section class="recipe-content">
-              <article>
+            {/* <section class="recipe-content"> */}
+            <Row gutter={[40, 48]} style={{margin: 20}}>
+              <Col xl={12} sm={24}>
                 <h4>Instrucciones</h4>
 
                 {recipeById?.Instruccion?.map((item, index) => (
@@ -57,16 +58,17 @@ const Procedure = () => {
                     <Step title={"paso " + `${index + 1}`} description={item} />
                   </Steps>
                 ))}
-              </article>-
-              <article class="second-column">
+              </Col>
+              <Col xl={12} sm={24}>
                 <h4>Ingredientes</h4>
                 {ingredientes?.map((item, index) => (
                   <div key={index}>
                     <p class="single-ingredient">{item}</p>
                   </div>
                 ))}
-              </article>
-            </section>
+              </Col>
+            </Row>
+            {/* </section> */}
           </div>
         </main>
       </Content>

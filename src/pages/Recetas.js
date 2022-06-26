@@ -42,7 +42,7 @@ const Recetas = () => {
               {listarRecetas?.map((item) => (
                 <>
                   <a href={`/procedure/${item._id}`} className="recipe">
-                    <img src={receta1} class="img recipe-img" alt="" />
+                    <img src={item.image} class="img recipe-img" alt="" />
                     <h5>{item.nameRecipes}</h5>
                     <p>
                       Prep : {item.preTime} | Cook : {item.cookTime}
