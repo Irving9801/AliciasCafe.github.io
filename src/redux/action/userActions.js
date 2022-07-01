@@ -6,6 +6,7 @@ import {
   USER_REGISTER_SUCCESS,
   USER_LOGIN_FAIL,
   USER_LOGIN_REQUEST,
+  USER_LOGIN_ADMIN,
 } from "../../constants/userConstants";
 import { AC_MAIN } from "../../API";
 
@@ -59,12 +60,13 @@ export const login = (email, password) => {
         email,
         password,
       });
-      dispatch({
-        type: USER_LOGIN_SUCCESS,
-        payload: data,
-      });
+
       if (data.isAdmin) {
-        // push("/Admin");
+        dispatch({ type: USER_LOGIN_ADMIN, payload: true });
+        dispatch({
+          type: USER_LOGIN_SUCCESS,
+          payload: data,
+        });
       }
     } catch (error) {
       dispatch({

@@ -3,6 +3,7 @@ import {
   USER_REGISTER_FAIL,
   USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
+  USER_LOGIN_ADMIN,
 
   USER_LOGIN_FAIL,
   USER_LOGIN_REQUEST,
@@ -32,6 +33,8 @@ export const userLoginReducer = (state = {}, action) => {
       return { loading: false, userInfo: action.payload }
     case USER_LOGIN_FAIL:
       return { loading: false, error: action.payload }
+    case USER_LOGIN_ADMIN:
+      return {  isAuthenticate: action.payload }
     case USER_LOGOUT:
       return {}
     default:

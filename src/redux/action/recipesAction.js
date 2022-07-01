@@ -22,9 +22,7 @@ export const listRecipes = () => async (dispatch) => {
     };
 
     const { data } = await axios.get(`${AC_MAIN}api/recipes`, config);
-    toast.warn("Warning Notification !", {
-      position: toast.POSITION.BOTTOM_LEFT,
-    });
+    
     dispatch({
       type: RECIPES_LIST_MENU_SUCCESS,
       payload: data,

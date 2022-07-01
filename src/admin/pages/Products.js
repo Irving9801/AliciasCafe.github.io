@@ -1,40 +1,39 @@
-import {
-  Button,
-  Col,
-  Form,
-  Input,
-  Row,
-  Select,
-  Spin,
-  Upload,
-} from "antd";
+import { Button, Col, Form, Input, Row, Select, Spin, Upload } from "antd";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createMenu } from "../../redux/action/productosActions";
+import { createProduct } from "../../redux/action/productosActions";
 import Main from "../components/layout/Main";
 const { TextArea } = Input;
 const { Option } = Select;
 
-function Home() {
-  const [imgBase64, setBase64] = useState("");
+function Products() {
+  const [imgBase64, setBase64] = useState({ base64: [] });
   const dispatch = useDispatch();
   const onFinish = (values) => {
     const payload = {
-      name: values.name,
-      image: imgBase64,
-      description: values.description,
-      brand: "frape",
+      nameProdut: values.nameProdut,
+      imagesList: imgBase64.base64,
+      descriptionProduct: values.descriptionProduct,
       category: values.category,
       price: values.price,
     };
-    dispatch(createMenu(payload));
+    dispatch(createProduct(payload));
+  };
+  const _decodes = (e) => {
+    const { base64 } = imgBase64;
+    let newArray = [e];
+    base64.push(newArray);
+    setBase64({
+      ...imgBase64,
+      base64,
+    });
   };
   const getBase64 = (file) =>
     new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
 
-      reader.onload = () => resolve(setBase64(reader.result));
+      reader.onload = () => resolve(_decodes(reader.result));
       reader.onerror = (error) => reject(error);
     });
   return (
@@ -56,8 +55,8 @@ function Home() {
             autoComplete="off"
           >
             <Form.Item
-              label="name"
-              name="name"
+              label="Nombre del producto"
+              name="nameProdut"
               rules={[
                 {
                   required: true,
@@ -100,7 +99,7 @@ function Home() {
               <Input />
             </Form.Item>
             <Form.Item
-              label="Imagen"
+              label="Imagenes"
               rules={[
                 {
                   required: true,
@@ -127,12 +126,12 @@ function Home() {
                   },
                 }}
               >
-                <Button>Upload</Button>
+                <Button>Subir archivo</Button>
               </Upload.Dragger>
             </Form.Item>
             <Form.Item
               label="descripcion"
-              name="description"
+              name="descriptionProduct"
               rules={[
                 {
                   required: true,
@@ -144,7 +143,7 @@ function Home() {
             </Form.Item>
             <Form.Item label="Button">
               <Button type="primary" htmlType="submit">
-                Submit
+                Enviar
               </Button>
             </Form.Item>
           </Form>
@@ -154,4 +153,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Products;

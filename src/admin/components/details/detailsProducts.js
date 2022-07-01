@@ -4,23 +4,24 @@ import React, { useEffect } from "react";
 // Images
 import Main from "../../components/layout/Main";
 import { useDispatch, useSelector } from "react-redux";
+import { deleteRecipes } from "../../../redux/action/recipesAction";
 import {
-  deleteRecipes,
-  getRecipesById,
-} from "../../../redux/action/recipesAction";
-
-function DetailsRecipes() {
-  let params = window.location.pathname.slice(15);
+  deleteProduct,
+  getProductsById,
+} from "../../../redux/action/productosActions";
+function DetailsProducts() {
+  let params = window.location.pathname.slice(16);
   const dispatch = useDispatch();
-  const { nameRecipes, category, preTime } = useSelector(
-    (state) => state.recipes.listById
+  const { nameProdut, category, price, descriptionProcduct } = useSelector(
+    (state) => state.productos.listProById
   );
+  const { deleteLoadProd } = useSelector((state) => state.productos);
   useEffect(() => {
-    dispatch(getRecipesById(params));
+    dispatch(getProductsById(params));
   }, [dispatch]);
   const { Text } = Typography;
   const handleDelete = () => {
-    dispatch(deleteRecipes(params));
+    dispatch(deleteProduct(params));
   };
   return (
     <Main>
@@ -53,7 +54,7 @@ function DetailsRecipes() {
                         <Input
                           placeholder="Acp Id"
                           readOnly
-                          defaultValue={nameRecipes ? nameRecipes : "No data"}
+                          defaultValue={nameProdut ? nameProdut : "No data"}
                         />
                       </Form.Item>
                     </Col>
@@ -96,12 +97,12 @@ function DetailsRecipes() {
                         <Input
                           placeholder="Puntaje"
                           readOnly
-                          defaultValue={preTime ? preTime : "No data"}
+                          defaultValue={price ? price : "No data"}
                         />
                       </Form.Item>
                     </Col>
                   </Row>
-                  <Row gutter={8}>
+                  {/* <Row gutter={8}>
                     <Col
                       xs={{ span: 20 }}
                       sm={{ span: 20 }}
@@ -167,8 +168,8 @@ function DetailsRecipes() {
                         />
                       </Form.Item>
                     </Col>
-                  </Row>
-                  <Row gutter={8}>
+                  </Row> */}
+                  {/* <Row gutter={8}>
                     <Col
                       xs={{ span: 20 }}
                       sm={{ span: 20 }}
@@ -234,7 +235,7 @@ function DetailsRecipes() {
                         />
                       </Form.Item>
                     </Col>
-                  </Row>
+                  </Row> */}
                 </Form>
                 <Button type="primary" danger onClick={handleDelete}>
                   Primary
@@ -248,4 +249,4 @@ function DetailsRecipes() {
   );
 }
 
-export default DetailsRecipes;
+export default DetailsProducts;

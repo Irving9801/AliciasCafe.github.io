@@ -9,12 +9,15 @@ import {
   PRODUCTS_ID_SUCCESS,
   PRODUCTS_ID_SHOW,
   PRODUCTS_ID_HIDE,
-
   GET_MENU_ID_SUCCESS,
   GET_MENU_ID_SHOW,
   GET_MENU_ID_HIDE,
+  DELETE_PRODUCT_SHOW,
+  DELETE_PRODUCT_HIDE,
 } from "../../constants/userConstants";
 import { AC_MAIN } from "../../API";
+import { toast } from "react-toastify";
+import { message } from "antd";
 export const listMenu = () => async (dispatch) => {
   dispatch({
     type: PRODUCT_LIST_MENU_SHOW,
@@ -180,5 +183,60 @@ export const getMenuById = (id) => async (dispatch) => {
     dispatch({
       type: GET_MENU_ID_HIDE,
     });
+  }
+};
+
+export const deleteProduct = (id) => async (dispatch) => {
+  dispatch({ type: DELETE_PRODUCT_SHOW });
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTFiMDU4Mjg2MGU2NDk5ZWNiODFmNiIsImlhdCI6MTY1NTUyODc2MCwiZXhwIjoxNjU4MTIwNzYwfQ.v_ad0P6XT55g5466U08SLxFGcuPZ7RjipATcq1CGikg",
+      },
+    };
+    const { data, status } = await axios.delete(
+      `${AC_MAIN}api/produts/${id}`,
+      config
+    );
+    if (status === 200) {
+      toast.success(data.message || "Producto eliminado correctamente");
+    }
+  } catch (error) {
+    toast.error(
+      error.response.data.message || "Ha ocurrido un error al eliminar producto"
+    );
+  } finally {
+    dispatch({ type: DELETE_PRODUCT_HIDE });
+  }
+};
+
+export const createProduct = (payload) => async (dispatch) => {
+ 
+  console.log(payload);
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTFiMDU4Mjg2MGU2NDk5ZWNiODFmNiIsImlhdCI6MTY1NTUyODc2MCwiZXhwIjoxNjU4MTIwNzYwfQ.v_ad0P6XT55g5466U08SLxFGcuPZ7RjipATcq1CGikg",
+      },
+    };
+
+    const { data } = await axios.post(`${AC_MAIN}api/produts`, payload, config);
+    
+
+    localStorage.setItem("listMenu", JSON.stringify(data));
+  } catch (error) {
+    dispatch({
+      // type: USER_REGISTER_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  } finally {
+    
   }
 };

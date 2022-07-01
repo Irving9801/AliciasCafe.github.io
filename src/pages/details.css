@@ -4,7 +4,19 @@
     align-items: flex-start;
     flex-direction: column;
 }
-  
+.carousel.carousel-slider .control-arrow {
+  top: 0 !important;
+  background: #4b2425 !important;
+  font-size: 26px !important;
+  bottom: 0 !important;
+  margin-top: 0 !important;
+  padding: 5px !important;
+  height: 4rem !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: auto !important;
+}
   .btn {
     text-transform: uppercase;
     position: relative;

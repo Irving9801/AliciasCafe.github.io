@@ -18,7 +18,7 @@ const initialState = {
   //   cartItems: cartItemsFromStorage,
   //   shippingAddress: shippingAddressFromStorage,
   // },
-//  productos: { userInfo: userInfoFromStorage },
+    login: { isAuthenticate: false },
 };
 
 const middleware = [thunk,promise];

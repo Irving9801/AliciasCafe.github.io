@@ -42,7 +42,7 @@ function Recipes() {
   const [imgBase64, setBase64] = useState("");
   const dispatch = useDispatch();
   const onFinish = (values) => {
-    console.log(values,"vas");
+    console.log(values, "vas");
     const payload = {
       nameRecipes: values.nameRecipes,
       image: imgBase64,

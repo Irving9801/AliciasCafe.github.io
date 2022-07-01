@@ -19,7 +19,6 @@ function DetailsMenu() {
     dispatch(getMenuById(params));
   }, [dispatch]);
   const { Text } = Typography;
-  console.log(params, "sdasd");
   const handleDelete = () => {
     dispatch(deleteRecipes(params));
   };

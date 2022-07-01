@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/FooterComponent";
 import "./ecommerce.css";
-import img1 from "./images/cafe.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../redux/action/productosActions";
 const { Content } = Layout;
@@ -15,7 +14,6 @@ const Ecommerce = () => {
   const listarProducts = useSelector(
     (state) => state.productos.listProducts.products
   );
-
   return (
     <Layout className="layout__Main">
       <Header />
@@ -26,7 +24,7 @@ const Ecommerce = () => {
               <div class="product-content">
                 <a href={`/details/${item._id}`}>
                   <div class="product-img">
-                    <img src={img1} alt="product image" />
+                    <img src={item.imagesList[0]} alt="product image" />
                   </div>
                 </a>
                 <div class="product-btns">
