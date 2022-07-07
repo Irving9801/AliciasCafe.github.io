@@ -58,9 +58,10 @@ const DetalisEcommerce = () => {
                         transitionTime={1000}
                       >
                         {listProById?.imagesList?.map((image, index) => (
+                          console.log(image),
                           <>
                             <div style={{display: 'flex', alignItems: 'center'}}>
-                              <img src={image} />
+                              <img src={image[0]} />
                             </div>
                           </>
                         ))}

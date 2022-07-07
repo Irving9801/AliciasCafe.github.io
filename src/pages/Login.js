@@ -17,7 +17,7 @@ const Login = () => {
 
   useEffect(() => {
     if (loginData?.isAdmin === true) {
-      navigate("/admin");
+      navigate("/admin/dashboard");
     }
   }, [loginData]);
 

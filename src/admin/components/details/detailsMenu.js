@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import Main from "../layout/Main";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  deleteMenu,
   deleteRecipes,
 } from "../../../redux/action/recipesAction";
 import { getMenuById } from "../../../redux/action/productosActions";
@@ -20,7 +21,7 @@ function DetailsMenu() {
   }, [dispatch]);
   const { Text } = Typography;
   const handleDelete = () => {
-    dispatch(deleteRecipes(params));
+    dispatch(deleteMenu(params));
   };
   return (
     <Main>
@@ -30,7 +31,7 @@ function DetailsMenu() {
             <Card
               bordered={false}
               className="criclebox tablespace mb-24"
-              title="Detalle de recetas"
+              title="Detalle de menu"
             >
               <div className="table-responsive">
                 <Form>

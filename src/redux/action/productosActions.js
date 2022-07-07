@@ -213,7 +213,6 @@ export const deleteProduct = (id) => async (dispatch) => {
 };
 
 export const createProduct = (payload) => async (dispatch) => {
- 
   console.log(payload);
   try {
     const config = {
@@ -224,19 +223,16 @@ export const createProduct = (payload) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post(`${AC_MAIN}api/produts`, payload, config);
-    
+    const { data, status } = await axios.post(
+      `${AC_MAIN}api/produts`,
+      payload,
+      config
+    );
 
-    localStorage.setItem("listMenu", JSON.stringify(data));
+    if (status === 200) {
+      toast.success(data.message || "Producto creado correctamente");
+    }
   } catch (error) {
-    dispatch({
-      // type: USER_REGISTER_FAIL,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
-    });
-  } finally {
-    
+    toast.error(error.message || "El producto no se ha creado correctamente");
   }
 };

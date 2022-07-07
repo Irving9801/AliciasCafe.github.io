@@ -105,7 +105,7 @@ function TablesMenu() {
             <Card
               bordered={false}
               className="criclebox tablespace mb-24"
-              title="Lista de recetas"
+              title="Lista de menus"
             >
               <div className="table-responsive">
                 <Table

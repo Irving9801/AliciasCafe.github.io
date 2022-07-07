@@ -3,6 +3,9 @@ import { Layout } from "antd";
 import Footer from "../components/FooterComponent";
 import Header from "../components/Header";
 import "../assets/css/pages/style.css";
+import destacado1 from "../assets/destacado1.jpg";
+import destacado2 from "../assets/destacados2.jpg";
+import destacado3 from "../assets/destacado3.jpg";
 // import { useSplash } from "../components/SplashProvider";
 const { Content } = Layout;
 
@@ -46,31 +49,32 @@ export default function Home() {
             <div class="row">
               <div class="col-xs-12 col-sm-4">
                 <div class="features-item">
-                  <h3>Lorem ipsum dolor</h3>
-                  <img src="https://media-cdn.tripadvisor.com/media/photo-p/14/54/1e/21/photo0jpg.jpg" class="img-responsive" alt="" />
+                  <h3>Sister’s Sandwich</h3>
+                  <img src={destacado1} class="img-responsive" alt="" />
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Duis sed dapibus leo nec ornare diam sed commodo.
+                    El nuevo Sister’s Sandwich ha llegado a nuestro menú de
+                    desayunos para quedarse. Que esperas para probarlo?.
                   </p>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-4">
                 <div class="features-item">
-                  <h3>Consectetur adipiscing</h3>
-                  <img src="https://media-cdn.tripadvisor.com/media/photo-p/14/54/1e/21/photo0jpg.jpg" class="img-responsive" alt="" />
+                  <h3>Cheesy House Burguer</h3>
+                  <img src={destacado2} class="img-responsive" alt="" />
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Duis sed dapibus leo nec ornare diam sed commodo.
+                    La nueva opción en hamburguesas que te traemos. Pan de la
+                    Casa, Doble carne, Doble queso Cheddar y Salsa de la casa.
+                    Simplemente deliciosa.
                   </p>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-4">
                 <div class="features-item">
-                  <h3>Duis sed dapibus</h3>
-                  <img src="https://media-cdn.tripadvisor.com/media/photo-p/14/54/1e/21/photo0jpg.jpg" class="img-responsive" alt="" />
+                  <h3>Passion Burguer</h3>
+                  <img src={destacado3} class="img-responsive" alt="" />
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Duis sed dapibus leo nec ornare diam sed commodo.
+                    Pan de la casa, Carne cubierta con queso cheddar, lechuga,
+                    tomate, bacon y nuestra nueva salsa a base de maracuyá.
                   </p>
                 </div>
               </div>

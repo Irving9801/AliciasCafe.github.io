@@ -31,7 +31,7 @@ function DetailsProducts() {
             <Card
               bordered={false}
               className="criclebox tablespace mb-24"
-              title="Detalle de recetas"
+              title="Detalle de producto"
             >
               <div className="table-responsive">
                 <Form>

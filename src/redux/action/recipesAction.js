@@ -22,7 +22,7 @@ export const listRecipes = () => async (dispatch) => {
     };
 
     const { data } = await axios.get(`${AC_MAIN}api/recipes`, config);
-    
+
     dispatch({
       type: RECIPES_LIST_MENU_SUCCESS,
       payload: data,
@@ -90,9 +90,40 @@ export const deleteRecipes = (id) => async (dispatch) => {
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTFiMDU4Mjg2MGU2NDk5ZWNiODFmNiIsImlhdCI6MTY1NTUyODc2MCwiZXhwIjoxNjU4MTIwNzYwfQ.v_ad0P6XT55g5466U08SLxFGcuPZ7RjipATcq1CGikg",
       },
     };
-    const { data } = await axios.delete(`${AC_MAIN}api/recipes/${id}`, config);
-    console.log(data, "asdsadsadasdasdasdasdasdasd");
-  } catch (error) {}
+    const { data, status } = await axios.delete(
+      `${AC_MAIN}api/recipes/${id}`,
+      config
+    );
+    if (status === 200) {
+      toast.success(data.message || "Receta eliminado correctamente");
+    }
+  } catch (error) {
+    toast.error(
+      error.response.data.message || "Ha ocurrido un error al eliminar receta"
+    );
+  }
+};
+export const deleteMenu = (id) => async (dispatch) => {
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTFiMDU4Mjg2MGU2NDk5ZWNiODFmNiIsImlhdCI6MTY1NTUyODc2MCwiZXhwIjoxNjU4MTIwNzYwfQ.v_ad0P6XT55g5466U08SLxFGcuPZ7RjipATcq1CGikg",
+      },
+    };
+    const { data, status } = await axios.delete(
+      `${AC_MAIN}api/menu/${id}`,
+      config
+    );
+    if (status === 200) {
+      toast.success(data.message || "Menu eliminado correctamente");
+    }
+  } catch (error) {
+    toast.error(
+      error.response.data.message || "Ha ocurrido un error al eliminar menu"
+    );
+  }
 };
 export const createRecipe = (payload) => async (dispatch) => {
   console.log(payload);

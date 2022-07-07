@@ -14,17 +14,19 @@ const Ecommerce = () => {
   const listarProducts = useSelector(
     (state) => state.productos.listProducts.products
   );
+  console.log(listarProducts);
   return (
     <Layout className="layout__Main">
       <Header />
       <Content>
         <div class="product-items">
           {listarProducts?.map((item) => (
+            console.log(item.imagesList[0][0],"SSSSSSS"),
             <div class="product">
               <div class="product-content">
                 <a href={`/details/${item._id}`}>
                   <div class="product-img">
-                    <img src={item.imagesList[0]} alt="product image" />
+                    <img src={item.imagesList[0][0]} alt="product image" />
                   </div>
                 </a>
                 <div class="product-btns">
