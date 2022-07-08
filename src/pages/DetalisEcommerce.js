@@ -52,13 +52,10 @@ const DetalisEcommerce = () => {
                         showThumbs={true}
                         showStatus={false}
                         infiniteLoop
-                        // emulateTouch
-                        // autoPlay
                         useKeyboardArrows
                         transitionTime={1000}
                       >
                         {listProById?.imagesList?.map((image, index) => (
-                          console.log(image),
                           <>
                             <div style={{display: 'flex', alignItems: 'center'}}>
                               <img src={image[0]} />

@@ -55,7 +55,6 @@ export const createMenu = (payload) => async (dispatch) => {
   dispatch({
     type: PRODUCT_LIST_MENU_SHOW,
   });
-  console.log(payload);
   try {
     const config = {
       headers: {
@@ -213,7 +212,6 @@ export const deleteProduct = (id) => async (dispatch) => {
 };
 
 export const createProduct = (payload) => async (dispatch) => {
-  console.log(payload);
   try {
     const config = {
       headers: {

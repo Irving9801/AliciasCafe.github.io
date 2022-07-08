@@ -8,6 +8,7 @@ import Login from "../pages/Login";
 import Homes from "../admin/pages/Home";
 import Recipes from "../admin/pages/Recipes";
 import Products from "../admin/pages/Products";
+import Sales from "../admin/pages/dashboardSales";
 import Tables from "../admin/pages/Tables";
 import ListMenu from "../admin/pages/TablesMenu";
 import TablesProducts from "../admin/pages/TablesProducts";
@@ -45,6 +46,7 @@ function Connection() {
           <Route path="/admin/listProducts" element={<TablesProducts />} />
           <Route path="/admin/listMenu" element={<ListMenu />} />
           <Route path="/details/:id" element={<DetalisEcommerce />} />
+          <Route path="/sales" element={<Sales />} />
           {/* </Main> */}
         </Routes>
       </BrowserRouter>

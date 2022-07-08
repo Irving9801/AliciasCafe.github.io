@@ -46,7 +46,7 @@ export const productosReducers = (state = initialState, action) =>
         draft.listProducts = action.payload;
         break;
       case PRODUCT_LIST_HIDE:
-        draft.c = false;
+        draft.loadingList = false;
         break;
 
       case PRODUCTS_ID_SHOW:

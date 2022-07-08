@@ -15,10 +15,6 @@ function About() {
               <div class="row">
                 <div class="col-lg-10 col-12 mx-auto">
                   <h1 class="text-white">Alicia's Cafe Gourmet</h1>
-
-                  <strong class="text-white">
-                    this is how our kitchen evolved in new digital era
-                  </strong>
                 </div>
               </div>
             </div>
@@ -30,30 +26,19 @@ function About() {
             <div class="container">
               <div class="row">
                 <div class="col-lg-6 col-12 mb-2">
-                  <h4 class="mb-3">
-                    Crispy Kitchen is the latest Bootstrap 5 HTML template
-                    provided by Tooplate website.
-                  </h4>
-
-                  <a href="news.html" class="custom-btn btn btn-dark mt-3">
-                    Check out News
-                  </a>
-
-                  <a
-                    href="contact.html"
-                    class="custom-btn btn btn-danger mt-3 ms-3"
-                  >
-                    Say Hi
-                  </a>
+                  <h4 class="mb-3">Un poco de nuestra historia</h4>
                 </div>
 
                 <div class="col-lg-6 col-12">
                   <p className="description_text">
-                    Since this website template is 100% free to use, you can
-                    edit and apply it for your commercial restaurant websites.
-                    There are 6 HTML pages included in this template. Please{" "}
-                    <strong>click "Reservation" button</strong> on the top right
-                    to see the pop-up reservation form.
+                    Alicia’s Café Gourmet es una empresa totalmente familiar que
+                    aporta sus habilidades y conocimientos adquiridos a través
+                    del tiempo con estudios realizados para especializarse en
+                    esta área de los alimentos y ofrecer el mejor servicio
+                    posible a sus clientes, además de que cuenta con un ambiente
+                    agradable del cual se puede disfrutar de sus deliciosos
+                    platillos, postres y cafés manteniendo la calidad de sus
+                    creaciones trabajando con productos y personal de primera.
                   </p>
                 </div>
               </div>
@@ -155,16 +140,16 @@ function About() {
           <section class="about section-padding">
             <div class="container">
               <div class="row">
-                <div class="col-12">
-                  <h2 class="mb-5">Ubicacion</h2>
+                <div class="col-24">
+                  <h2 class="mb-5">Ubicación</h2>
                 </div>
 
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1141.168724778488!2d-81.31669315715396!3d8.009971310739733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fae396b6a9a78d1%3A0x30d43c6eb3c73218!2sAlicia&#39;s%20Cafe%20Gourmet!5e0!3m2!1ses-419!2spa!4v1655356351713!5m2!1ses-419!2spa"
-                  width="600"
+                  width="100%"
                   height="450"
                   frameborder="0"
-                  style={{ border: 0 }}
+                  style={{ border: 0, width: "100%" }}
                   allowfullscreen=""
                   aria-hidden="false"
                   tabindex="0"

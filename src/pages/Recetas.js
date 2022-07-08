@@ -26,10 +26,6 @@ const Recetas = () => {
               <div class="row">
                 <div class="col-lg-10 col-12 mx-auto">
                   <h1 class="text-white">Alicia's Cafe Gourmet</h1>
-
-                  <strong class="text-white">
-                    this is how our kitchen evolved in new digital era
-                  </strong>
                 </div>
               </div>
             </div>

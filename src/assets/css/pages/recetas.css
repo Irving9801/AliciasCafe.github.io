@@ -100,7 +100,7 @@ Recipes
       grid-template-columns: 1fr 1fr;
     }
     .recipe-img {
-      height: 10rem;
+      /* height: 10rem; */
       width: 100% !important;
       object-fit: cover;
     }

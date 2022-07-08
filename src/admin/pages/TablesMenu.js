@@ -27,11 +27,6 @@ const columns = [
     dataIndex: "category",
   },
   {
-    title: "EMPLOYED",
-    key: "createdAt",
-    dataIndex: "createdAt",
-  },
-  {
     title: "Action",
     key: "_id",
     dataIndex: "_id",

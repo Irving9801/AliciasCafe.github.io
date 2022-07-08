@@ -126,7 +126,6 @@ export const deleteMenu = (id) => async (dispatch) => {
   }
 };
 export const createRecipe = (payload) => async (dispatch) => {
-  console.log(payload);
   try {
     const config = {
       headers: {

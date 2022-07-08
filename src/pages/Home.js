@@ -50,17 +50,17 @@ export default function Home() {
               <div class="col-xs-12 col-sm-4">
                 <div class="features-item">
                   <h3>Sister’s Sandwich</h3>
-                  <img src={destacado1} class="img-responsive" alt="" />
+                  <img src={destacado1} className="img-responsive" alt="" />
                   <p>
                     El nuevo Sister’s Sandwich ha llegado a nuestro menú de
                     desayunos para quedarse. Que esperas para probarlo?.
                   </p>
                 </div>
               </div>
-              <div class="col-xs-12 col-sm-4">
-                <div class="features-item">
+              <div className="col-xs-12 col-sm-4">
+                <div className="features-item">
                   <h3>Cheesy House Burguer</h3>
-                  <img src={destacado2} class="img-responsive" alt="" />
+                  <img src={destacado2} className="img-responsive" alt="" />
                   <p>
                     La nueva opción en hamburguesas que te traemos. Pan de la
                     Casa, Doble carne, Doble queso Cheddar y Salsa de la casa.
@@ -68,10 +68,10 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div class="col-xs-12 col-sm-4">
-                <div class="features-item">
+              <div className="col-xs-12 col-sm-4">
+                <div className="features-item">
                   <h3>Passion Burguer</h3>
-                  <img src={destacado3} class="img-responsive" alt="" />
+                  <img src={destacado3} className="img-responsive" alt="" />
                   <p>
                     Pan de la casa, Carne cubierta con queso cheddar, lechuga,
                     tomate, bacon y nuestra nueva salsa a base de maracuyá.

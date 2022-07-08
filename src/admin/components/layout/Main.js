@@ -70,7 +70,6 @@ function Main({ children }) {
         breakpoint="lg"
         collapsedWidth="0"
         onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
         }}
         trigger={null}
         width={250}

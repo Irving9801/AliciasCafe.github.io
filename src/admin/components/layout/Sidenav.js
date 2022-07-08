@@ -125,6 +125,37 @@ function Sidenav({ color }) {
             </NavLink>
           </Menu.Item>
         </SubMenu>
+        {/* <SubMenu
+          title={
+            <>
+              <span
+                className="icon"
+                style={{
+                  background: page === "tables" ? color : "",
+                }}
+              >
+                {tables}
+              </span>
+              <span className="label">Tienda</span>
+            </>
+          }
+        >
+          <Menu.Item key="2">
+            <NavLink to="/sales">
+              <span className="label">Ventas</span>
+            </NavLink>
+          </Menu.Item>
+          {/* <Menu.Item key="3">
+            <NavLink to="/admin/listMenu">
+              <span className="label">Lista de menu</span>
+            </NavLink>
+          </Menu.Item>
+          <Menu.Item key="4">
+            <NavLink to="/admin/listProducts">
+              <span className="label">Lista de productos</span>
+            </NavLink>
+          </Menu.Item> */}
+        {/* </SubMenu> */} 
       </Menu>
     </>
   );
