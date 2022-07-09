@@ -14,10 +14,14 @@ const Login = () => {
     dispatch(login(values.username, values.password));
   };
   const loginData = useSelector((state) => state.login.userInfo);
-
+  const url = window.location.search
+    ? window.location.search.split("=")[1]
+    : null;
   useEffect(() => {
     if (loginData?.isAdmin === true) {
       navigate("/admin/dashboard");
+    } else if (url !== null && loginData) {
+      navigate("/shipping");
     }
   }, [loginData]);
 

@@ -4,6 +4,16 @@ import { Layout } from "antd";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
 import ReactLoading from "react-loading";
+import { useNavigate } from "react-router-dom";
+import {
+  Row,
+  Col,
+  Image,
+  ListGroup,
+  Card,
+  Button,
+  Form,
+} from "react-bootstrap";
 import receta1 from "../assets/recipes/recipe-1.jpeg";
 import { useDispatch, useSelector } from "react-redux";
 import "./details.css";
@@ -11,10 +21,17 @@ import { getProductsById } from "../redux/action/productosActions";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { addToCart } from "../redux/action/cartActions";
 const { Content } = Layout;
-const DetalisEcommerce = () => {
+const DetalisEcommerce = ({ history }) => {
   const dispatch = useDispatch();
+  let navigate = useNavigate();
   let params = window.location.pathname.slice(9);
+  const addToCartHandler = () => {
+    dispatch(addToCart(params, 1));
+
+    navigate(`/cart/${params}?qty=1`);
+  };
   const { listProById } = useSelector((state) => state.productos);
   const { loading } = useSelector((state) => state.productos);
   useEffect(() => {
@@ -57,7 +74,9 @@ const DetalisEcommerce = () => {
                       >
                         {listProById?.imagesList?.map((image, index) => (
                           <>
-                            <div style={{display: 'flex', alignItems: 'center'}}>
+                            <div
+                              style={{ display: "flex", alignItems: "center" }}
+                            >
                               <img src={image[0]} />
                             </div>
                           </>
@@ -67,48 +86,66 @@ const DetalisEcommerce = () => {
                     <div class="col-md-6 col-detalle">
                       <h2 class="text-black">{listProById.nameProdut}</h2>
                       <p>{listProById.descriptionProduct}</p>
-                      <p>
-                        <strong class="text-primary h4">
-                          {listProById.price}
-                        </strong>
-                      </p>
 
-                      <div class="mb-5">
-                        <div
-                          class="input-group mb-3"
-                          style={{ maxWidth: "120px" }}
-                        >
-                          <div class="input-group-prepend">
-                            <button
-                              class="btn btn-outline-primary js-btn-minus"
-                              type="button"
-                            >
-                              -
-                            </button>
-                          </div>
-                          <input
-                            type="text"
-                            class="form-control text-center"
-                            value="1"
-                            placeholder=""
-                            aria-label="Example text with button addon"
-                            aria-describedby="button-addon1"
-                          />
-                          <div class="input-group-append">
-                            <button
-                              class="btn btn-outline-primary js-btn-plus"
-                              type="button"
-                            >
-                              +
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                      {/* <p>
-              <a href="cart.html" class="buy-now btn btn-sm btn-primary">
-                Add To Cart
-              </a>
-            </p> */}
+                      <Col md={3} lg={6}>
+                        <Card>
+                          <ListGroup variant="flush">
+                            <ListGroup.Item>
+                              <Row>
+                                <Col>Price:</Col>
+                                <Col>
+                                  <strong>${listProById.price}</strong>
+                                </Col>
+                              </Row>
+                            </ListGroup.Item>
+
+                            <ListGroup.Item>
+                              <Row>
+                                <Col>Estado:</Col>
+                                <Col>
+                                  {/* {product.countInStock > 0
+                                    ? "In Stock"
+                                    : "Out Of Stock"} */}
+                                </Col>
+                              </Row>
+                            </ListGroup.Item>
+
+                            {/* {product.countInStock > 0 && ( */}
+                            <ListGroup.Item>
+                              <Row>
+                                <Col>Qty</Col>
+                                <Col>
+                                  <Form.Control
+                                    as="select"
+                                    // value={qty}
+                                    // onChange={(e) => setQty(e.target.value)}
+                                  >
+                                    {/* {[
+                                        ...Array(product.countInStock).keys(),
+                                      ].map((x) => (
+                                        <option key={x + 1} value={x + 1}>
+                                          {x + 1}
+                                        </option>
+                                      ))} */}
+                                  </Form.Control>
+                                </Col>
+                              </Row>
+                            </ListGroup.Item>
+                            {/* )} */}
+
+                            <ListGroup.Item>
+                              <Button
+                                onClick={addToCartHandler}
+                                className="btn-block"
+                                type="button"
+                                // disabled={product.countInStock === 0}
+                              >
+                                Agregar
+                              </Button>
+                            </ListGroup.Item>
+                          </ListGroup>
+                        </Card>
+                      </Col>
                     </div>
                   </div>
                 </div>

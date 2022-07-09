@@ -15,6 +15,9 @@ function DetailsRecipes() {
   const { nameRecipes, category, preTime } = useSelector(
     (state) => state.recipes.listById
   );
+  const list = useSelector(
+    (state) => state.recipes.listById
+  );
   useEffect(() => {
     dispatch(getRecipesById(params));
   }, [dispatch]);
@@ -22,6 +25,7 @@ function DetailsRecipes() {
   const handleDelete = () => {
     dispatch(deleteRecipes(params));
   };
+  console.log(list,"AAAAAAA")
   return (
     <Main>
       <div className="tabled">
@@ -33,7 +37,7 @@ function DetailsRecipes() {
               title="Detalle de recetas"
             >
               <div className="table-responsive">
-                <Form>
+                <Form style={{ padding: "20px" }}>
                   <Row gutter={8}>
                     <Col
                       xs={{ span: 20 }}
@@ -238,6 +242,9 @@ function DetailsRecipes() {
                 </Form>
                 <Button type="primary" danger onClick={handleDelete}>
                   Primary
+                </Button>
+                <Button type="secondary" danger onClick={handleDelete}>
+                  Editar
                 </Button>
               </div>
             </Card>

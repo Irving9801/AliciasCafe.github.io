@@ -12,7 +12,7 @@ import Table from "../components/table/Table";
 
 import Badge from "../components/badge/Badge";
 
-// import statusCards from "../assets/JsonData/status-card-data.json";
+import statusCards from "../assets/status-card-data.json";
 
 const chartOptions = {
   series: [
@@ -170,7 +170,7 @@ const Dashboard = () => {
       <div className="row">
         <div className="col-6">
           <div className="row">
-            {/* {statusCards.map((item, index) => (
+            {statusCards.map((item, index) => (
               <div className="col-6" key={index}>
                 <StatusCard
                   icon={item.icon}
@@ -178,7 +178,7 @@ const Dashboard = () => {
                   title={item.title}
                 />
               </div>
-            ))} */}
+            ))}
           </div>
         </div>
         <div className="col-6">

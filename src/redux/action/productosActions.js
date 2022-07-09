@@ -234,3 +234,29 @@ export const createProduct = (payload) => async (dispatch) => {
     toast.error(error.message || "El producto no se ha creado correctamente");
   }
 };
+
+export const updateProducto = (payload, id) => async (dispatch) => {
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTFiMDU4Mjg2MGU2NDk5ZWNiODFmNiIsImlhdCI6MTY1NTUyODc2MCwiZXhwIjoxNjU4MTIwNzYwfQ.v_ad0P6XT55g5466U08SLxFGcuPZ7RjipATcq1CGikg",
+      },
+    };
+console.log(payload,":OAOA")
+    const { data, status } = await axios.put(
+      `${AC_MAIN}api/produts/${id}`,
+      payload,
+      config
+    );
+
+    if (status === 200) {
+      toast.success(data.message || "Producto actualizado correctamente");
+    }
+  } catch (error) {
+    toast.error(
+      error.message || "El producto no se ha podido actualizar correctamente"
+    );
+  }
+};

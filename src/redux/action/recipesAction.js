@@ -149,3 +149,36 @@ export const createRecipe = (payload) => async (dispatch) => {
   } finally {
   }
 };
+
+export const updateMenu = (payload, id) => async (dispatch) => {
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTFiMDU4Mjg2MGU2NDk5ZWNiODFmNiIsImlhdCI6MTY1NTUyODc2MCwiZXhwIjoxNjU4MTIwNzYwfQ.v_ad0P6XT55g5466U08SLxFGcuPZ7RjipATcq1CGikg",
+      },
+    };
+
+    const { data, status } = await axios.put(
+      `${AC_MAIN}api/menu/${id}`,
+      payload,
+      config
+    );
+
+    if (status === 200) {
+      toast.success(data.message || "Menu actualizado correctamente!");
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    }
+  } catch (error) {
+    dispatch({
+      // type: USER_REGISTER_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};

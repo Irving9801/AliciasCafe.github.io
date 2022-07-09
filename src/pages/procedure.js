@@ -3,7 +3,6 @@ import "../assets/css/pages/procedure.css";
 import { Steps, Layout, Col, Row } from "antd";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
-import receta1 from "../assets/recipes/recipe-1.jpeg";
 import { getRecipesById } from "../redux/action/recipesAction";
 import { useDispatch, useSelector } from "react-redux";
 const { Content } = Layout;
@@ -49,7 +48,7 @@ const Procedure = () => {
               </article>
             </section>
             {/* <section class="recipe-content"> */}
-            <Row gutter={[40, 48]} style={{margin: 20}}>
+            <Row gutter={[40, 48]} style={{ margin: 20 }}>
               <Col xl={12} sm={24}>
                 <h4>Instrucciones</h4>
 

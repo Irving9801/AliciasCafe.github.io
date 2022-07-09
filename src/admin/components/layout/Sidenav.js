@@ -4,9 +4,17 @@ import React from "react";
 import SubMenu from "antd/lib/menu/SubMenu";
 import logo from "../../../assets/img/logo.png";
 import { MenuUnfoldOutlined, OrderedListOutlined } from "@ant-design/icons";
+import { Button } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { logout } from "../../../redux/action/userActions";
 function Sidenav({ color }) {
   const { pathname } = useLocation();
+  const dispatch = useDispatch();
   const page = pathname.replace("/", "");
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
+
   const dashboard = [
     <svg
       width="20"
@@ -125,7 +133,7 @@ function Sidenav({ color }) {
             </NavLink>
           </Menu.Item>
         </SubMenu>
-        {/* <SubMenu
+        <SubMenu
           title={
             <>
               <span
@@ -141,21 +149,32 @@ function Sidenav({ color }) {
           }
         >
           <Menu.Item key="2">
-            <NavLink to="/sales">
-              <span className="label">Ventas</span>
+            <NavLink to="/admin/orderlist">
+              <span className="label">Pedidos</span>
             </NavLink>
           </Menu.Item>
-          {/* <Menu.Item key="3">
-            <NavLink to="/admin/listMenu">
-              <span className="label">Lista de menu</span>
+          <Menu.Item key="3">
+            <NavLink to="/admin/user">
+              <span className="label">Usuarios</span>
             </NavLink>
           </Menu.Item>
-          <Menu.Item key="4">
-            <NavLink to="/admin/listProducts">
-              <span className="label">Lista de productos</span>
-            </NavLink>
-          </Menu.Item> */}
-        {/* </SubMenu> */} 
+        </SubMenu>
+        <SubMenu
+          onClick={logoutHandler}
+          title={
+            <>
+              <span
+                className="icon"
+                style={{
+                  background: page === "tables" ? color : "",
+                }}
+              >
+                {tables}
+              </span>
+              <Button onClick={logoutHandler}>Tienda</Button>
+            </>
+          }
+        />
       </Menu>
     </>
   );
