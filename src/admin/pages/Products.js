@@ -16,6 +16,7 @@ function Products() {
       descriptionProduct: values.descriptionProduct,
       category: values.category,
       price: values.price,
+      countInStock: values.countInStock,
     };
     dispatch(createProduct(payload));
   };
@@ -39,7 +40,7 @@ function Products() {
   return (
     <Main>
       <Row gutter={16}>
-        <Col xxl={12} xs={24}>
+        <Col xxl={12} xs={24} xl={16}>
           <Form
             name="basic"
             labelCol={{
@@ -77,7 +78,7 @@ function Products() {
               ]}
             >
               <Select
-                placeholder="Select a option and change input text above"
+                placeholder="Seleccione una opcion"
                 // onChange={onGenderChange}
                 allowClear
               >
@@ -89,6 +90,18 @@ function Products() {
             <Form.Item
               label="Precio"
               name="price"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your username!",
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+            <Form.Item
+              label="Cantidad"
+              name="countInStock"
               rules={[
                 {
                   required: true,
@@ -141,7 +154,7 @@ function Products() {
             >
               <TextArea rows={4} />
             </Form.Item>
-            <Form.Item label="Button">
+            <Form.Item label=".">
               <Button type="primary" htmlType="submit">
                 Enviar
               </Button>

@@ -6,12 +6,20 @@ import "../../src/assets/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import logo from "../assets/img/logo.png";
 import { CSSTransition } from "react-transition-group";
-import { Layout } from "antd";
+import { Layout,Button } from "antd";
+import { LogoutOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../redux/action/userActions";
 const { Content } = Layout;
 export default function Header() {
+  const dispatch = useDispatch();
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-
+  const userLogin = useSelector((state) => state.login);
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
+  const { userInfo } = userLogin;
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 700px)");
     mediaQuery.addListener(handleMediaQueryChange);
@@ -37,7 +45,13 @@ export default function Header() {
   return (
     <>
       <header className="Header">
-        <img src={logo} className="Logo" alt="logo" />
+        <button onClick={toggleNav} className="Logo" src={logo}>
+          {/* <img src={logo} className="Logo" alt="logo" /> */}
+        </button>
+
+        {/* <button onClick={toggleNav} className="Logo">
+          🍔
+        </button> */}
         <CSSTransition
           in={!isSmallScreen || isNavVisible}
           timeout={350}
@@ -49,12 +63,12 @@ export default function Header() {
             <Link to="/Menu">Menu</Link>
             <Link to="/recetas">Recetas</Link>
             <Link to="/about">Acerca de</Link>
-            <Link to="/tienda">Store</Link>
+            <Link to="/tienda">Tienda</Link>
             <Link to="/Login">Sign Up / Registrate</Link>
           </nav>
         </CSSTransition>
         <button onClick={toggleNav} className="Burger">
-          🍔
+          🛍️
         </button>
       </header>
       <nav id="navbar-header" className="navbar navbar-expand-lg">
@@ -76,9 +90,23 @@ export default function Header() {
             </a>
             <div className="divo">
               <Link to="/about">Acerca de</Link>
-              <Link to="/tienda">Store</Link>
+              <Link to="/tienda">Tienda</Link>
               <Link to="/Login">Sign Up / Registrate</Link>
             </div>
+          </div>
+          <div className="icons-outled">
+            {userInfo ? (
+              <>
+                 <Button type="link">
+                  <ShoppingCartOutlined
+                    style={{ fontSize: "26px", color: "#fff" }}
+                  />
+                </Button>
+                <Button onClick={logoutHandler} type="link">
+                  <LogoutOutlined style={{ fontSize: "26px", color: "#fff" }} />
+                </Button>
+              </>
+            ) : null}
           </div>
         </Content>
       </nav>

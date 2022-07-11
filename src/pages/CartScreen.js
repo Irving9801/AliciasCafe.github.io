@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Row,
@@ -20,13 +20,14 @@ const { Content } = Layout;
 
 const CartScreen = ({ match, location, history }) => {
   // const productId = match.params.id
-
+  const { id } = useParams();
+  console.log(useParams());
+  console.log(id, "orod");
   // const qty = location.search ? Number(location.search.split('=')[1]) : 1
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
-  console.log(cart, "cartActions");
   const { cartItems } = cart;
 
   // useEffect(() => {
@@ -54,7 +55,7 @@ const CartScreen = ({ match, location, history }) => {
             alignItems: "center",
             display: "flex",
             margin: "auto",
-          minHeight: "50vh",
+            minHeight: "50vh",
           }}
         >
           <Col md={8}>
@@ -93,7 +94,6 @@ const CartScreen = ({ match, location, history }) => {
                         </Form.Control>
                       </Col>
                       <Col md={2}>
-                        sdfsd
                         <Button
                           type="button"
                           variant="light"

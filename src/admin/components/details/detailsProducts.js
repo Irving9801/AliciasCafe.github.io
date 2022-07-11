@@ -25,7 +25,7 @@ function DetailsProducts() {
   const dispatch = useDispatch();
   const [editForm, setEditForm] = useState(false);
   const [imgBase64, setBase64] = useState({ base64: [] });
-  const { nameProdut, category, price, descriptionProduct } = useSelector(
+  const { nameProdut, category, price, descriptionProduct,countInStock } = useSelector(
     (state) => state.productos.listProById
   );
   const { deleteLoadProd } = useSelector((state) => state.productos);
@@ -42,6 +42,7 @@ function DetailsProducts() {
       descriptionProduct: values.descriptionProduct,
       category: values.category,
       price: values.price,
+      countInStock: values.countInStock,
     };
     dispatch(updateProducto(payload, params));
   };
@@ -92,6 +93,7 @@ function DetailsProducts() {
                       price: price,
                       category: category,
                       descriptionProduct: descriptionProduct,
+                      countInStock: countInStock,
                     }}
                     onFinish={onFinish}
                     onFinishFailed={onFinishFailed}
@@ -200,12 +202,27 @@ function DetailsProducts() {
                           </Upload.Dragger>
                         </Form.Item>
                       </Col>
+                      <Col xs={24} sm={{ span: 20 }} md={{ span: 8 }} lg={12}>
+                        <TitleInput titleIn="Cantidad" />
+                        <Form.Item
+                          name="countInStock"
+                          rules={[
+                            {
+                              required: true,
+                              message: "Please input your username!",
+                            },
+                          ]}
+                        >
+                          <Input readOnly={!editForm} />
+                        </Form.Item>
+                      </Col>
                     </Row>
                     <Form.Item
                       wrapperCol={{
                         offset: 8,
                         span: 16,
                       }}
+                      style={{display: 'flex', width: '100%',}}
                     >
                       <Button type="primary" danger onClick={handleDelete}>
                         Eliminar menu

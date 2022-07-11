@@ -3,6 +3,10 @@ import { Layout, Row, Col } from "antd";
 import "./about.css";
 import Footer from "../components/FooterComponent";
 import Header from "../components/Header";
+import about1 from "./images/about1.jpg";
+import about2 from "./images/about2.jpg";
+import about3 from "./images/about3.jpg";
+import about4 from "./images/about4.jpg";
 const { Content } = Layout;
 function About() {
   return (
@@ -21,7 +25,77 @@ function About() {
 
             <div class="overlay"></div>
           </header>
-
+          <div class="container-xxl py-5">
+            <div class="container">
+              <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                  <div class="row g-3">
+                    <div class="col-6 text-start">
+                      <img
+                        class="img-fluid rounded w-100 wow zoomIn"
+                        data-wow-delay="0.1s"
+                        src={about1}
+                      />
+                    </div>
+                    <div class="col-6 text-start">
+                      <img
+                        class="img-fluid rounded w-75 wow zoomIn"
+                        data-wow-delay="0.3s"
+                        src={about2}
+                        style={{ marginTop: "25%;" }}
+                      />
+                    </div>
+                    <div class="col-6 text-end">
+                      <img
+                        class="img-fluid rounded w-75 wow zoomIn"
+                        data-wow-delay="0.5s"
+                        src={about3}
+                      />
+                    </div>
+                    <div class="col-6 text-end">
+                      <img
+                        class="img-fluid rounded w-100 wow zoomIn"
+                        data-wow-delay="0.7s"
+                        src={about4}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <h1 class="mb-4">
+                    Bienvenido a{" "}
+                    <i class="fa fa-utensils text-primary me-2"></i>
+                    Alicia's Cafe Gourmet
+                  </h1>
+                  <p class="mb-4">
+                    Nuestra misión es aumentar la cultura y consumo del café panameño
+                    que es exportado a diferentes países y no solo darlo a
+                    conocer internacionalmente, sino, que nacionalmente sea
+                    degustado por cada uno de nosotros no solo en sitios
+                    específicos del país como Boquete o Panamá, e ir cerrando
+                    las limitaciones de algunos consumidores de no poder acceder
+                    a sitios como estos.
+                  </p>
+                  <div class="row g-4 mb-4">
+                    <div class="col-sm-6">
+                      <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                        <h1
+                          class="flex-shrink-0 display-5 text-primary mb-0"
+                          data-toggle="counter-up"
+                        >
+                          3
+                        </h1>
+                        <div class="ps-4">
+                          <p class="mb-0">Años</p>
+                          <h6 class="text-uppercase mb-0">de experiencia</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <section class="about section-padding bg-white">
             <div class="container">
               <div class="row">
@@ -61,43 +135,16 @@ function About() {
                     />
 
                     <div class="team-info">
-                      <h4 class="mt-3 mb-0">Sophia</h4>
+                      <h4 class="mt-3 mb-0">Vander Adrian Morón</h4>
 
-                      <p>CEO &amp; Founder</p>
+                      <p>CEO</p>
                     </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-12 my-lg-0 my-4">
-                  <div class="team-thumb">
-                    <img
-                      src="https://t4.ftcdn.net/jpg/04/72/26/31/360_F_472263145_qIPkhZolVX1zIpF4e8SGvIJZ1ZsU4J7j.jpg"
-                      class="img-fluid team-image"
-                      alt=""
-                    />
-
-                    <h4 class="mt-3 mb-0">Benjamin W.</h4>
-
-                    <p>Restaurant Manager</p>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-12">
-                  <div class="team-thumb">
-                    <img
-                      src="https://t4.ftcdn.net/jpg/04/72/26/31/360_F_472263145_qIPkhZolVX1zIpF4e8SGvIJZ1ZsU4J7j.jpg"
-                      class="img-fluid team-image"
-                      alt=""
-                    />
-
-                    <h4 class="mt-3 mb-0">Muchen Jack</h4>
-
-                    <p>Senior Chef</p>
                   </div>
                 </div>
               </div>
             </div>
           </section>
+
           <section class="about section-padding">
             <div class="container">
               <div class="row">
@@ -107,31 +154,31 @@ function About() {
                 <Row>
                   <Col span={8}>Lunes</Col>
                   <Col span={8} offset={8}>
-                    9:00 - 02:00
+                    CERRADO
                   </Col>
                   <Col span={8}>Martes</Col>
                   <Col span={8} offset={8}>
-                    9:00 - 02:00
+                    07:30 - 22:00
                   </Col>
                   <Col span={8}>Miercoles</Col>
                   <Col span={8} offset={8}>
-                    9:00 - 02:00
+                    07:30 - 22:00
                   </Col>
                   <Col span={8}>Jueves</Col>
                   <Col span={8} offset={8}>
-                    9:00 - 02:00
+                    07:30 - 22:00
                   </Col>
                   <Col span={8}>Viernes</Col>
                   <Col span={8} offset={8}>
-                    9:00 - 02:00
+                    07:30 - 22:00
                   </Col>
-                  <Col span={8}>Sabado</Col>
+                  <Col span={8}>Sábado</Col>
                   <Col span={8} offset={8}>
-                    9:00 - 02:00
+                    16:00 - 22:00
                   </Col>
                   <Col span={8}>Domingo</Col>
                   <Col span={8} offset={8}>
-                    Cerrado
+                    16:00 - 22:00
                   </Col>
                 </Row>
               </div>

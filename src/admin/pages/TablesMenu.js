@@ -10,7 +10,7 @@ import { listMenu } from "../../redux/action/productosActions";
 // table code start
 const columns = [
   {
-    title: "AUTHOR",
+    title: "NOMBRE",
     dataIndex: "name",
     key: "name",
     width: "32%",
@@ -22,7 +22,7 @@ const columns = [
   },
 
   {
-    title: "STATUS",
+    title: "CATEGORIA",
     key: "category",
     dataIndex: "category",
   },

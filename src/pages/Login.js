@@ -22,6 +22,8 @@ const Login = () => {
       navigate("/admin/dashboard");
     } else if (url !== null && loginData) {
       navigate("/shipping");
+    }else if(loginData){
+      navigate("/")
     }
   }, [loginData]);
 

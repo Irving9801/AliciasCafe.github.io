@@ -4,7 +4,6 @@ import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
 import "../assets/css/pages/recetas.css";
 import { useDispatch, useSelector } from "react-redux";
-import receta1 from "../assets/recipes/recipe-1.jpeg";
 import { listRecipes } from "../redux/action/recipesAction";
 const { Content } = Layout;
 
@@ -31,9 +30,7 @@ const Recetas = () => {
             </div>
           </header>
           <section class="recipes-container">
-            <div class="tags-container">
-            
-            </div>
+            <div class="tags-container"></div>
             <div class="recipes-list">
               {listarRecetas?.map((item) => (
                 <>
@@ -41,7 +38,8 @@ const Recetas = () => {
                     <img src={item.image} class="img recipe-img" alt="" />
                     <h5>{item.nameRecipes}</h5>
                     <p>
-                      Prep : {item.preTime} | Cook : {item.cookTime}
+                      Preparación : {item.preTime} | Tiempo de cocción :{" "}
+                      {item.cookTime}
                     </p>
                   </a>
                 </>

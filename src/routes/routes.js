@@ -17,20 +17,16 @@ import Sales from "../admin/pages/dashboardSales";
 import Tables from "../admin/pages/Tables";
 import ListMenu from "../admin/pages/TablesMenu";
 import TablesProducts from "../admin/pages/TablesProducts";
-import Index from "../admin/App";
 import Ecommerce from "../pages/ecommerce";
 import Procedure from "../pages/procedure";
 import DetalisEcommerce from "../pages/DetalisEcommerce";
 import DetalisRecipes from "../admin/components/details/detailsRecipes";
 import DetailsMenu from "../admin/components/details/detailsMenu";
 import DetalisProducts from "../admin/components/details/detailsProducts";
-import { useSelector } from "react-redux";
 import OrderListScreen from "../admin/pages/OrderListScreen";
 import UserListScreen from "../admin/pages/UserListScreen";
 import UserEditScreen from "../admin/pages/UserEditScreen";
 function Connection() {
-  const { isAuthenticate } = useSelector((state) => state.login);
-  // console.log(isAdmin,"is amdin")
   return (
     <>
       <BrowserRouter>

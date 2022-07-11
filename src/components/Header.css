@@ -2,6 +2,11 @@
   .Header {
     display: none;
   }
+  .icons-outled{
+    display: flex;
+    justify-content: space-between;
+    width: 5rem;
+  }
 }
 @media only screen and (max-width: 800px) {
   .navbar {

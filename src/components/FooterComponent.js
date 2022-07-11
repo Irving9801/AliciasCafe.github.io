@@ -17,34 +17,46 @@ export default function App() {
                 data-at2x={logo}
               />
               <p className="footer-p">
-                We are a young company always looking for new and creative ideas
-                to help you with our products in your everyday work.
+                Aumentamos la cultura y consumo del café panameño que es exportado
+                a diferentes países y no solo darlo a conocer
+                internacionalmente, sino, que nacionalmente sea degustado por
+                cada uno de nosotros.
               </p>
             </div>
             <div className="col-md-4 col-lg-4 offset-lg-1 footer-contact wow fadeInDown">
               <h3>Contactanos</h3>
               <p>
-                <i className="fas fa-map-marker-alt"></i> Via Rossini 10, 10136
-                Turin Italy
+                <i className="fas fa-map-marker-alt"></i> C. B Nte., Soná
               </p>
               <p>
-                <i className="fas fa-phone"></i> Phone: (0039) 333 12 68 347
+                <i className="fas fa-phone"></i> Telefono: 933-7450
               </p>
               <p>
-                <i className="fas fa-envelope"></i> Email:{" "}
-                <a href="mailto:hello@domain.com">hello@domain.com</a>
-              </p>
-              <p>
-                <i className="fab fa-skype"></i> Skype: you_online
+                <i className="fas fa-envelope"></i> Correo:{" "}
+                <a href="mailto:aliciasCafe@hotmail.com">
+                  aliciasCafe@hotmail.com
+                </a>
               </p>
             </div>
             <div className="col-md-4 col-lg-3 footer-social wow fadeInUp">
               <h3>Siguenos</h3>
               <p>
-                <FacebookOutlined style={{ fontSize: "36px", color: "#08c" }} />
-                <InstagramOutlined
-                  style={{ fontSize: "36px", color: "#08c" }}
-                />
+                <a
+                  href="https://web.facebook.com/aliciascafegourmet2012?_rdc=1&_rdr"
+                  target="_blank"
+                >
+                  <FacebookOutlined
+                    style={{ fontSize: "36px", color: "#08c" }}
+                  />
+                </a>
+                <a
+                  href="https://www.instagram.com/aliciascafegourmet/?hl=es-la"
+                  target="_blank"
+                >
+                  <InstagramOutlined
+                    style={{ fontSize: "36px", color: "#08c" }}
+                  />
+                </a>
               </p>
             </div>
           </div>

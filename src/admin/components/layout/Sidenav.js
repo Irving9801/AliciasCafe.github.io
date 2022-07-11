@@ -3,7 +3,12 @@ import { NavLink, useLocation } from "react-router-dom";
 import React from "react";
 import SubMenu from "antd/lib/menu/SubMenu";
 import logo from "../../../assets/img/logo.png";
-import { MenuUnfoldOutlined, OrderedListOutlined } from "@ant-design/icons";
+import {
+  LogoutOutlined,
+  MenuUnfoldOutlined,
+  OrderedListOutlined,
+} from "@ant-design/icons";
+import "./layout.css"
 import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../redux/action/userActions";
@@ -14,7 +19,25 @@ function Sidenav({ color }) {
   const logoutHandler = () => {
     dispatch(logout());
   };
-
+  const signup = [
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
+      key={0}
+    >
+      <path
+        d="M0,2A2,2,0,0,1,2,0H8a2,2,0,0,1,2,2V8a2,2,0,0,1-2,2H2A2,2,0,0,1,0,8Z"
+        transform="translate(4 4)"
+        fill={color}
+      />
+      <path
+        d="M2,0A2,2,0,0,0,0,2V8a2,2,0,0,0,2,2V4A2,2,0,0,1,4,2h6A2,2,0,0,0,8,0Z"
+        fill={color}
+      />
+    </svg>,
+  ];
   const dashboard = [
     <svg
       width="20"
@@ -159,22 +182,12 @@ function Sidenav({ color }) {
             </NavLink>
           </Menu.Item>
         </SubMenu>
-        <SubMenu
-          onClick={logoutHandler}
-          title={
-            <>
-              <span
-                className="icon"
-                style={{
-                  background: page === "tables" ? color : "",
-                }}
-              >
-                {tables}
-              </span>
-              <Button onClick={logoutHandler}>Tienda</Button>
-            </>
-          }
-        />
+        <Menu.Item key="8">
+          <NavLink to="/sign-up">
+            <span className="icon"><LogoutOutlined style={{ fontSize: "20px", color: "#fff" }} /></span>
+            <span className="label">Cerrar sesión</span>
+          </NavLink>
+        </Menu.Item>
       </Menu>
     </>
   );

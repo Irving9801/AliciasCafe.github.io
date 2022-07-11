@@ -67,7 +67,7 @@ function Recipes() {
   return (
     <Main>
       <Row gutter={16}>
-        <Col xxl={12} xs={24}>
+        <Col xxl={12} xs={24} xl={16}>
           <Form
             name="basic"
             labelCol={{
@@ -83,7 +83,7 @@ function Recipes() {
             autoComplete="off"
           >
             <Form.Item
-              label="name"
+              label="Nombre"
               name="nameRecipes"
               rules={[
                 {
@@ -105,7 +105,7 @@ function Recipes() {
               ]}
             >
               <Select
-                placeholder="Select a option and change input text above"
+                placeholder="Selecciona una opcion"
                 // onChange={onGenderChange}
                 allowClear
               >
@@ -115,7 +115,7 @@ function Recipes() {
               </Select>
             </Form.Item>
             <Form.Item
-              label="Tiempo de preparation"
+              label="Tiempo de preparacion"
               name="preTime"
               rules={[
                 {
@@ -139,7 +139,7 @@ function Recipes() {
               <Input />
             </Form.Item>
             <Form.Item
-              label="CookTime"
+              label="Tiempo de cocción"
               name="cookTime"
               rules={[
                 {
@@ -300,7 +300,6 @@ function Recipes() {
                         noStyle
                       >
                         <Input
-                          placeholder="passenger name"
                           style={{
                             width: "60%",
                           }}
@@ -314,7 +313,7 @@ function Recipes() {
                       ) : null}
                     </Form.Item>
                   ))}
-                  <Form.Item label="Instruccion">
+                  <Form.Item label="Instrucciones">
                     <Button
                       type="dashed"
                       onClick={() => add()}
@@ -330,9 +329,9 @@ function Recipes() {
                 </>
               )}
             </Form.List>
-            <Form.Item label="Button">
+            <Form.Item label=".">
               <Button type="primary" htmlType="submit">
-                Submit
+                Crear receta
               </Button>
             </Form.Item>
           </Form>

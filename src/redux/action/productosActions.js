@@ -51,16 +51,17 @@ export const listMenu = () => async (dispatch) => {
   }
 };
 
-export const createMenu = (payload) => async (dispatch) => {
+export const createMenu = (payload) => async (dispatch,getState) => {
   dispatch({
     type: PRODUCT_LIST_MENU_SHOW,
   });
+
   try {
+    const { login } = getState();
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTFiMDU4Mjg2MGU2NDk5ZWNiODFmNiIsImlhdCI6MTY1NTUyODc2MCwiZXhwIjoxNjU4MTIwNzYwfQ.v_ad0P6XT55g5466U08SLxFGcuPZ7RjipATcq1CGikg",
+        Authorization: `Bearer ${login.userInfo.token}`,
       },
     };
 
@@ -106,7 +107,6 @@ export const listProducts = () => async (dispatch) => {
     localStorage.setItem("listMenu", JSON.stringify(data));
   } catch (error) {
     dispatch({
-      // type: USER_REGISTER_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
@@ -244,7 +244,7 @@ export const updateProducto = (payload, id) => async (dispatch) => {
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTFiMDU4Mjg2MGU2NDk5ZWNiODFmNiIsImlhdCI6MTY1NTUyODc2MCwiZXhwIjoxNjU4MTIwNzYwfQ.v_ad0P6XT55g5466U08SLxFGcuPZ7RjipATcq1CGikg",
       },
     };
-console.log(payload,":OAOA")
+    console.log(payload, ":OAOA");
     const { data, status } = await axios.put(
       `${AC_MAIN}api/produts/${id}`,
       payload,

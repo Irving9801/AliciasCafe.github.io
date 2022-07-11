@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../assets/css/pages/procedure.css";
 import { Layout } from "antd";
 import Header from "../components/Header";
@@ -25,18 +25,21 @@ import { addToCart } from "../redux/action/cartActions";
 const { Content } = Layout;
 const DetalisEcommerce = ({ history }) => {
   const dispatch = useDispatch();
+  const [qty, setQty] = useState(1);
   let navigate = useNavigate();
   let params = window.location.pathname.slice(9);
   const addToCartHandler = () => {
     dispatch(addToCart(params, 1));
 
-    navigate(`/cart/${params}?qty=1`);
+    navigate(`/cart/${params}?qty=${qty}`);
   };
   const { listProById } = useSelector((state) => state.productos);
   const { loading } = useSelector((state) => state.productos);
   useEffect(() => {
     dispatch(getProductsById(params));
   }, [dispatch]);
+
+  console.log(listProById.countInStock);
   return (
     <Layout className="layout__Main">
       <Header />
@@ -103,35 +106,37 @@ const DetalisEcommerce = ({ history }) => {
                               <Row>
                                 <Col>Estado:</Col>
                                 <Col>
-                                  {/* {product.countInStock > 0
-                                    ? "In Stock"
-                                    : "Out Of Stock"} */}
+                                  {listProById.countInStock > 0
+                                    ? "En Stock"
+                                    : "Agotado"}
                                 </Col>
                               </Row>
                             </ListGroup.Item>
 
-                            {/* {product.countInStock > 0 && ( */}
-                            <ListGroup.Item>
-                              <Row>
-                                <Col>Qty</Col>
-                                <Col>
-                                  <Form.Control
-                                    as="select"
-                                    // value={qty}
-                                    // onChange={(e) => setQty(e.target.value)}
-                                  >
-                                    {/* {[
-                                        ...Array(product.countInStock).keys(),
+                            {listProById.countInStock > 0 && (
+                              <ListGroup.Item>
+                                <Row>
+                                  <Col>Cantidad</Col>
+                                  <Col>
+                                    <Form.Control
+                                      as="select"
+                                      value={qty}
+                                      onChange={(e) => setQty(e.target.value)}
+                                    >
+                                      {[
+                                        ...Array(
+                                          listProById.countInStock
+                                        ).keys(),
                                       ].map((x) => (
                                         <option key={x + 1} value={x + 1}>
                                           {x + 1}
                                         </option>
-                                      ))} */}
-                                  </Form.Control>
-                                </Col>
-                              </Row>
-                            </ListGroup.Item>
-                            {/* )} */}
+                                      ))}
+                                    </Form.Control>
+                                  </Col>
+                                </Row>
+                              </ListGroup.Item>
+                            )}
 
                             <ListGroup.Item>
                               <Button

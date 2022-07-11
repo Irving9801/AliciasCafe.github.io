@@ -40,7 +40,7 @@ function Home() {
   return (
     <Main>
       <Row gutter={16}>
-        <Col xxl={12} xs={24}>
+        <Col xxl={12} xs={24} xl={16}>
           <Form
             name="basic"
             labelCol={{
@@ -56,7 +56,7 @@ function Home() {
             autoComplete="off"
           >
             <Form.Item
-              label="name"
+              label="Nombre"
               name="name"
               rules={[
                 {
@@ -78,7 +78,7 @@ function Home() {
               ]}
             >
               <Select
-                placeholder="Select a option and change input text above"
+                placeholder="Selecciona una categoria"
                 // onChange={onGenderChange}
                 allowClear
               >
@@ -142,9 +142,9 @@ function Home() {
             >
               <TextArea rows={4} />
             </Form.Item>
-            <Form.Item label="Button">
+            <Form.Item label=".">
               <Button type="primary" htmlType="submit">
-                Submit
+                Crear producto
               </Button>
             </Form.Item>
           </Form>
