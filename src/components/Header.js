@@ -6,7 +6,7 @@ import "../../src/assets/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import logo from "../assets/img/logo.png";
 import { CSSTransition } from "react-transition-group";
-import { Layout,Button } from "antd";
+import { Layout, Button } from "antd";
 import { LogoutOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/action/userActions";
@@ -45,13 +45,6 @@ export default function Header() {
   return (
     <>
       <header className="Header">
-        <button onClick={toggleNav} className="Logo" src={logo}>
-          {/* <img src={logo} className="Logo" alt="logo" /> */}
-        </button>
-
-        {/* <button onClick={toggleNav} className="Logo">
-          🍔
-        </button> */}
         <CSSTransition
           in={!isSmallScreen || isNavVisible}
           timeout={350}
@@ -68,7 +61,7 @@ export default function Header() {
           </nav>
         </CSSTransition>
         <button onClick={toggleNav} className="Burger">
-          🛍️
+          🍔
         </button>
       </header>
       <nav id="navbar-header" className="navbar navbar-expand-lg">
@@ -97,7 +90,7 @@ export default function Header() {
           <div className="icons-outled">
             {userInfo ? (
               <>
-                 <Button type="link">
+                <Button type="link">
                   <ShoppingCartOutlined
                     style={{ fontSize: "26px", color: "#fff" }}
                   />

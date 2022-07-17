@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Layout, Modal } from "antd";
+import { Layout, Modal, Tabs } from "antd";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
 import "../assets/css/pages/stylesMenu.css";
@@ -15,6 +15,7 @@ const Menu = () => {
   useEffect(() => {
     dispatch(listMenu());
   }, [dispatch]);
+  const { TabPane } = Tabs;
   return (
     <Layout className="layout__Main">
       <Header />
@@ -39,19 +40,53 @@ const Menu = () => {
               }}
             />
           ) : null}
-          <div class="menu">
-            {listarMenu?.map((item) => (
-              <div class="single-menu">
-                <img src={item.image} alt="" />
-                <div class="menu-content">
-                  <h4>
-                    {item.name} <span>${item.price}</span>
-                  </h4>
-                  <p className="description_text">{item.description}</p>
-                </div>
+          <Tabs defaultActiveKey="1" centered>
+            <TabPane tab="Popular" key="1">
+              <div class="menu">
+                {listarMenu?.map((item) => (
+                  <div class="single-menu">
+                    <img src={item.image} alt="" />
+                    <div class="menu-content">
+                      <h4>
+                        {item.name} <span>${item.price}</span>
+                      </h4>
+                      <p className="description_text">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </TabPane>
+            <TabPane tab="Hamburguesas" key="2">
+              <div class="menu">
+                {listarMenu?.map((item) => (
+                  <div class="single-menu">
+                    <img src={item.image} alt="" />
+                    <div class="menu-content">
+                      <h4>
+                        {item.name} <span>${item.price}</span>
+                      </h4>
+                      <p className="description_text">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </TabPane>
+            <TabPane tab="Frappes" key="3">
+              <div class="menu">
+                {listarMenu?.map((item) => (
+                  <div class="single-menu">
+                    <img src={item.image} alt="" />
+                    <div class="menu-content">
+                      <h4>
+                        {item.name} <span>${item.price}</span>
+                      </h4>
+                      <p className="description_text">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </TabPane>
+          </Tabs>
         </div>
       </Content>
       <FooterComponent />
