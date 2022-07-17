@@ -182,8 +182,8 @@ function Sidenav({ color }) {
             </NavLink>
           </Menu.Item>
         </SubMenu>
-        <Menu.Item key="8">
-          <NavLink to="/sign-up">
+        <Menu.Item key="8" onClick={logoutHandler}>
+          <NavLink to="/">
             <span className="icon"><LogoutOutlined style={{ fontSize: "20px", color: "#fff" }} /></span>
             <span className="label">Cerrar sesión</span>
           </NavLink>

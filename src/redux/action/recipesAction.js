@@ -30,14 +30,7 @@ export const listRecipes = () => async (dispatch) => {
 
     localStorage.setItem("listRecipes", JSON.stringify(data));
   } catch (error) {
-    console.error(error);
-    // dispatch({
-    //   // type: USER_REGISTER_FAIL,
-    //   payload:
-    //     error.response && error.response.data.message
-    //       ? error.response.data.message
-    //       : error.message,
-    // });
+
     toast.warn("Warning Notification !", {
       position: toast.POSITION.BOTTOM_LEFT,
     });

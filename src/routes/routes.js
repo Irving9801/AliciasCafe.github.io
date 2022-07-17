@@ -10,6 +10,7 @@ import PaymentScreen from "../pages/PaymentScreen";
 import Menu from "../pages/Menu";
 import Recetas from "../pages/Recetas";
 import Login from "../pages/Login";
+import Index from "../admin/App";
 import Homes from "../admin/pages/Home";
 import Recipes from "../admin/pages/Recipes";
 import Products from "../admin/pages/Products";

@@ -1,13 +1,4 @@
-import {
-  Row,
-  Col,
-  Card,
-  Input,
-  Form,
-  Button,
-  Upload,
-  Spin,
-} from "antd";
+import { Row, Col, Card, Input, Form, Button, Upload, Spin } from "antd";
 import React, { useEffect, useState } from "react";
 import TitleInput from "./../TitleInput/Title";
 // Images
@@ -43,15 +34,17 @@ function DetailsMenu(props) {
     dispatch(deleteMenu(params));
   };
   const onFinish = (values) => {
-    const payload = {
-      name: values.name,
-      image: imgBase64,
-      description: values.description,
-      brand: "frape",
-      category: values.category,
-      price: values.price,
-    };
-    dispatch(updateMenu(payload, params));
+    if (imgBase64) {
+      const payload = {
+        name: values.name,
+        image: imgBase64,
+        description: values.description,
+        brand: "frape",
+        category: values.category,
+        price: values.price,
+      };
+      dispatch(updateMenu(payload, params));
+    }
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -187,7 +180,7 @@ function DetailsMenu(props) {
                           <Upload.Dragger
                             listType="picture"
                             showUploadList={{ showRemoveIcon: true }}
-                            accept=".png,.jpeg"
+                            accept=".png,.jpeg,.jpg"
                             beforeUpload={(file) => {
                               getBase64(file);
                               return false;
@@ -208,15 +201,28 @@ function DetailsMenu(props) {
                         </Form.Item>
                       </Col>
                     </Row>
-                    <Form.Item
-                      wrapperCol={{
-                        offset: 8,
-                        span: 16,
-                      }}
-                    >
-                      <Button type="primary" danger onClick={handleDelete}>
+                  
+                    <Row gutter={8}>
+                      <Col
+                        xs={24}
+                        sm={{ span: 20 }}
+                        md={{ span: 8 }}
+                        lg={12}
+                      ></Col>
+                      <Col
+                        xs={24}
+                        sm={{ span: 20 }}
+                        md={{ span: 8 }}
+                        lg={12}
+                        style={{
+                          justifyContent: "start",
+                          display: "flex",
+                        }}
+                      >
+                      <Button type="primary" danger style={{ marginRight: 40 }} onClick={handleDelete}>
                         Eliminar menu
                       </Button>
+                    
                       {editForm === false ? (
                         <Button
                           type="secondary"
@@ -234,7 +240,9 @@ function DetailsMenu(props) {
                           Guardar
                         </Button>
                       )}
-                    </Form.Item>
+                      </Col>
+                      </Row>
+                    
                   </Form>
                 </div>
               </Card>

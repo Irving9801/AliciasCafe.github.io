@@ -244,7 +244,6 @@ export const updateProducto = (payload, id) => async (dispatch) => {
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTFiMDU4Mjg2MGU2NDk5ZWNiODFmNiIsImlhdCI6MTY1NTUyODc2MCwiZXhwIjoxNjU4MTIwNzYwfQ.v_ad0P6XT55g5466U08SLxFGcuPZ7RjipATcq1CGikg",
       },
     };
-    console.log(payload, ":OAOA");
     const { data, status } = await axios.put(
       `${AC_MAIN}api/produts/${id}`,
       payload,

@@ -29,8 +29,6 @@ const DetalisEcommerce = ({ history }) => {
   let navigate = useNavigate();
   let params = window.location.pathname.slice(9);
   const addToCartHandler = () => {
-    dispatch(addToCart(params, 1));
-
     navigate(`/cart/${params}?qty=${qty}`);
   };
   const { listProById } = useSelector((state) => state.productos);
@@ -39,7 +37,7 @@ const DetalisEcommerce = ({ history }) => {
     dispatch(getProductsById(params));
   }, [dispatch]);
 
-  console.log(listProById.countInStock);
+
   return (
     <Layout className="layout__Main">
       <Header />
@@ -143,7 +141,7 @@ const DetalisEcommerce = ({ history }) => {
                                 onClick={addToCartHandler}
                                 className="btn-block"
                                 type="button"
-                                // disabled={product.countInStock === 0}
+                                disabled={listProById.countInStock === 0}
                               >
                                 Agregar
                               </Button>

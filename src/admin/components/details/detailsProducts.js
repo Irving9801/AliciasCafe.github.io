@@ -18,6 +18,7 @@ import {
   updateProducto,
 } from "../../../redux/action/productosActions";
 import TitleInput from "./../TitleInput/Title";
+import { toast } from "react-toastify";
 const { TextArea } = Input;
 const { Option } = Select;
 function DetailsProducts() {
@@ -25,9 +26,8 @@ function DetailsProducts() {
   const dispatch = useDispatch();
   const [editForm, setEditForm] = useState(false);
   const [imgBase64, setBase64] = useState({ base64: [] });
-  const { nameProdut, category, price, descriptionProduct,countInStock } = useSelector(
-    (state) => state.productos.listProById
-  );
+  const { nameProdut, category, price, descriptionProduct, countInStock } =
+    useSelector((state) => state.productos.listProById);
   const { deleteLoadProd } = useSelector((state) => state.productos);
   useEffect(() => {
     dispatch(getProductsById(params));
@@ -36,15 +36,20 @@ function DetailsProducts() {
     dispatch(deleteProduct(params));
   };
   const onFinish = (values) => {
-    const payload = {
-      nameProdut: values.nameProdut,
-      imagesList: imgBase64.base64,
-      descriptionProduct: values.descriptionProduct,
-      category: values.category,
-      price: values.price,
-      countInStock: values.countInStock,
-    };
-    dispatch(updateProducto(payload, params));
+    console.log(imgBase64.base64.length>0)
+    if (imgBase64.base64.length>0) {
+      const payload = {
+        nameProdut: values.nameProdut,
+        imagesList: imgBase64.base64,
+        descriptionProduct: values.descriptionProduct,
+        category: values.category,
+        price: values.price,
+        countInStock: values.countInStock,
+      };
+      dispatch(updateProducto(payload, params));
+    }else{
+      toast.info( "Debes agregar una imagen");
+    }
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -76,7 +81,7 @@ function DetailsProducts() {
               <Card
                 bordered={false}
                 className="criclebox tablespace mb-24"
-                title="Detalles de producto"
+                title="Detalles de productos"
               >
                 <div className="table-responsive">
                   <Form
@@ -121,19 +126,19 @@ function DetailsProducts() {
                           rules={[
                             {
                               required: true,
-                              message: "Please input your password!",
+                              message: "Seleccione una categoria!",
                             },
                           ]}
                         >
                           <Select
-                            placeholder="Select a option and change input text above"
+                            placeholder="Seleccione un opción"
                             // onChange={onGenderChange}
                             allowClear
                             readOnly={!editForm}
                           >
                             <Option value="Desayuno">Desayuno</Option>
                             <Option value="Bebida">Bebida</Option>
-                            <Option value="other">other</Option>
+                            <Option value="other">Otros</Option>
                           </Select>
                         </Form.Item>
                       </Col>
@@ -160,7 +165,7 @@ function DetailsProducts() {
                           rules={[
                             {
                               required: true,
-                              message: "Please input your password!",
+                              message: "Porfavor digite un precio!",
                             },
                           ]}
                         >
@@ -181,8 +186,9 @@ function DetailsProducts() {
                         >
                           <Upload.Dragger
                             listType="picture"
+                            required={true}
                             showUploadList={{ showRemoveIcon: true }}
-                            accept=".png,.jpeg"
+                            accept=".png,.jpeg,.png"
                             beforeUpload={(file) => {
                               getBase64(file);
                               return false;
@@ -217,34 +223,45 @@ function DetailsProducts() {
                         </Form.Item>
                       </Col>
                     </Row>
-                    <Form.Item
-                      wrapperCol={{
-                        offset: 8,
-                        span: 16,
-                      }}
-                      style={{display: 'flex', width: '100%',}}
-                    >
-                      <Button type="primary" danger onClick={handleDelete}>
-                        Eliminar menu
-                      </Button>
-                      {editForm === false ? (
-                        <Button
-                          type="secondary"
-                          danger
-                          onClick={() => setEditForm(true)}
-                        >
-                          Editar
+                    <Row gutter={8}>
+                      <Col
+                        xs={24}
+                        sm={{ span: 20 }}
+                        md={{ span: 8 }}
+                        lg={12}
+                      ></Col>
+                      <Col
+                        xs={24}
+                        sm={{ span: 20 }}
+                        md={{ span: 8 }}
+                        lg={12}
+                        style={{
+                          justifyContent: "start",
+                          display: "flex",
+                        }}
+                      >
+                        <Button type="primary" danger onClick={handleDelete} style={{marginRight: 40}}>
+                          Eliminar menu
                         </Button>
-                      ) : (
-                        <Button
-                          type="secondary"
-                          htmlType="submit"
-                          onClick={() => setEditForm(true)}
-                        >
-                          Guardar
-                        </Button>
-                      )}
-                    </Form.Item>
+                        {editForm === false ? (
+                          <Button
+                            type="secondary"
+                            danger
+                            onClick={() => setEditForm(true)}
+                          >
+                            Editar
+                          </Button>
+                        ) : (
+                          <Button
+                            type="secondary"
+                            htmlType="submit"
+                            onClick={() => setEditForm(true)}
+                          >
+                            Guardar
+                          </Button>
+                        )}
+                      </Col>
+                    </Row>
                   </Form>
                 </div>
               </Card>

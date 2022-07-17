@@ -53,12 +53,12 @@ function TableProducts() {
       nameProdut: (
         <>
           <Avatar.Group>
-            {/* <Avatar
+            <Avatar
               className="shape-avatar"
               shape="square"
               size={40}
               src={item?.imagesList[0][0]}
-            ></Avatar> */}
+            ></Avatar>
             <div className="avatar-info">
               <Title level={5}>{item.nameProdut}</Title>
             </div>

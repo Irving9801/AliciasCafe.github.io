@@ -11,7 +11,7 @@ import {
   Card,
 } from "react-bootstrap";
 import Message from "../components/Message";
-import { removeFromCart } from "../redux/action/cartActions";
+import { addToCart, removeFromCart } from "../redux/action/cartActions";
 import Header from "../components/Header";
 import FooterComponent from "../components/FooterComponent";
 import { Layout } from "antd";
@@ -23,18 +23,21 @@ const CartScreen = ({ match, location, history }) => {
   const { id } = useParams();
   console.log(useParams());
   console.log(id, "orod");
-  // const qty = location.search ? Number(location.search.split('=')[1]) : 1
+  console.log(window.location.search.split("=")[1]);
+  const qty = window.location.search.split("=")[1]
+    ? window.location.search.split("=")[1]
+    : 1;
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
-  // useEffect(() => {
-  //   if (productId) {
-  //     dispatch(addToCart(productId, qty))
-  //   }
-  // }, [dispatch, productId, qty])
+  useEffect(() => {
+    if (id) {
+      dispatch(addToCart(id, qty));
+    }
+  }, [dispatch, id, qty]);
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
@@ -67,24 +70,25 @@ const CartScreen = ({ match, location, history }) => {
             ) : (
               <ListGroup variant="flush">
                 {cartItems.map((item) => (
+                  console.log(item),
                   <ListGroup.Item key={item.product}>
                     <Row>
                       <Col md={2}>
                         <Image src={item.image} alt={item.name} fluid rounded />
                       </Col>
                       <Col md={3}>
-                        <Link to={`/product/${item.product}`}>{item.name}</Link>
+                        <Link to={`/details/${item.product}`}>{item.name}</Link>
                       </Col>
                       <Col md={2}>${item.price}</Col>
                       <Col md={2}>
                         <Form.Control
                           as="select"
                           value={item.qty}
-                          // onChange={(e) =>
-                          //   dispatch(
-                          //     addToCart(item.product, Number(e.target.value))
-                          //   )
-                          // }
+                          onChange={(e) =>
+                            dispatch(
+                              addToCart(item.product, Number(e.target.value))
+                            )
+                          }
                         >
                           {[...Array(item.countInStock).keys()].map((x) => (
                             <option key={x + 1} value={x + 1}>

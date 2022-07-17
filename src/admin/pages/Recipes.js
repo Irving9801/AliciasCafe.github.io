@@ -37,7 +37,6 @@ const formItemLayoutWithOutLabel = {
     },
   },
 };
-
 function Recipes() {
   const [imgBase64, setBase64] = useState("");
   const dispatch = useDispatch();
@@ -60,16 +59,17 @@ function Recipes() {
       const reader = new FileReader();
       reader.readAsDataURL(file);
 
-      reader.onload = () =>
-        resolve(setBase64(reader.result));
+      reader.onload = () => resolve(setBase64(reader.result));
       reader.onerror = (error) => reject(error);
     });
+
   return (
     <Main>
       <Row gutter={16}>
         <Col xxl={12} xs={24} xl={16}>
           <Form
-            name="basic"
+            // name="basic"
+            name="dynamic_form_item"
             labelCol={{
               span: 8,
             }}
@@ -79,6 +79,7 @@ function Recipes() {
             initialValues={{
               remember: true,
             }}
+            {...formItemLayoutWithOutLabel}
             onFinish={onFinish}
             autoComplete="off"
           >
@@ -162,7 +163,7 @@ function Recipes() {
               <Upload.Dragger
                 listType="picture"
                 showUploadList={{ showRemoveIcon: true }}
-                accept=".png,.jpeg,.jpg"
+                accept=".png,.jpeg,.png"
                 multiple={true}
                 beforeUpload={(file) => {
                   getBase64(file);
@@ -220,7 +221,7 @@ function Recipes() {
                         noStyle
                       >
                         <Input
-                          placeholder="passenger name"
+                          placeholder="Agregar ingrediente"
                           style={{
                             width: "60%",
                           }}

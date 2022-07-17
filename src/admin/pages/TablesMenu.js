@@ -22,11 +22,6 @@ const columns = [
   },
 
   {
-    title: "CATEGORIA",
-    key: "category",
-    dataIndex: "category",
-  },
-  {
     title: "Action",
     key: "_id",
     dataIndex: "_id",
@@ -62,22 +57,6 @@ function TablesMenu() {
         <>
           <div className="author-info">
             <Title level={5}>{item.category}</Title>
-          </div>
-        </>
-      ),
-
-      status: (
-        <>
-          <Button type="primary" className="tag-primary">
-            ONLINE
-          </Button>
-        </>
-      ),
-      employed: (
-        <>
-          <div className="ant-employed">
-            <span>23/04/18</span>
-            <a href="#pablo">Edit</a>
           </div>
         </>
       ),

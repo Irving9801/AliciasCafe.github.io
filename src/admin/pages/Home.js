@@ -111,7 +111,7 @@ function Home() {
               <Upload.Dragger
                 listType="picture"
                 showUploadList={{ showRemoveIcon: true }}
-                accept=".png,.jpeg"
+                accept=".png,.jpeg,.png"
                 beforeUpload={(file) => {
                   getBase64(file);
                   return false;

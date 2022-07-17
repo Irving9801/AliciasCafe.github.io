@@ -48,7 +48,7 @@ const Ecommerce = () => {
                       <a href={`/details/${item._id}`}>
                         <div class="product-img">
                           <img
-                            src={item.imagesList[0][0]}
+                            src={item?.imagesList ? item?.imagesList[0][0] :null}
                             alt="product image"
                           />
                         </div>
